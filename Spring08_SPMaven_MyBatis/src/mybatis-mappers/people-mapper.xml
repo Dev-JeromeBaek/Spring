@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="peopleMapper">
+  <!-- namespace라는 네임영역을 줘야함!! <mapper> namespace : 이 영역을 칭함</mapper> -->
+  <!-- 
+  	SQL문 작성 및 기타 규칙
+  	1. SQL - 세미콜론(;) 불가능
+  	2. SQL - 이용되는 변수이름은 곧 getter를 의미하므로
+  				getter()가 필수적으로 존재해야 함.
+  	3. 사용되는 dto의 멤버 변수 이름과
+  		DB의 컬럼 이름이 같아야 자동으로 저장되는
+  		기능 사용 가능.
+  -->
+  <insert id="insertOne" parameterType="mvc.bean.PeopleBean">	<!-- #{name}의 getter() -->
+  	insert into t_peo values(t_peo_seq.nextval, #{name}, #{age})
+  </insert>
+  
+  <select id="selectList" resultType="pp">
+  	select * from t_peo order by num desc
+  </select>
+  
+  <select id="selectAll" 
+  		parameterType="java.lang.String"
+  		resultType="pp">
+  	select * from t_peo where name=#{search}
+  </select>
+  
+  <select id="selectAll02"
+  		parameterType="pp"
+  		resultType="pp">
+  	select * from t_peo where name=#{name}
+  </select>
+  
+  <select id="selectOne"
+  		parameterType="java.lang.Integer"
+  		resultType="pp">
+  	select * from t_peo where num=#{pk}
+  </select>
+  
+  <!--
+  	비교연산자 < 등과 같은 부호를 사용해야 하는 경우
+  	<![CDATA[]]> 를 이용해야 한다.
+  -->
+  <select id="selectRange"
+  			parameterType="mm"
+  			resultType="pp">
+<!--   	<![CDATA[ -->
+<!--   		select * from t_peo where age >= #{beginAge} and age <= #{endAge} -->
+<!--   	]]> -->
+  		select * from t_peo where age between #{beginAge} and #{endAge}
+  </select>
+  
+  <select id="selectUsingSQL"
+  			parameterType="mm"
+  			resultType="pp">
+  <!-- select * from t_peo where name=#{name} -->
+	select * from ${tableName} where ${colName}=#{searchKey}
+  </select>
+  
+  <!--
+   		문자열 포함 정보를 검색하는 like '% %' 이용 시 
+   		값은 ${}를 사용하여 '%${키워드}%' 로 명령해야 한다.
+  -->
+  <select id="selectKeyWord"
+  			parameterType="mm" 
+  			resultType="pp">
+  	select * from t_peo where name like '%${searchKey}%'
+  </select>
+  
+  <!-- 삭제 시 delete -->
+  <delete id="deleteOne" parameterType="java.lang.Integer">
+  	delete * from t_peo where num=#{num}
+  </delete>
+  
+  <!-- 수정 시 update -->
+  <update id="updateOne" parameterType="pp">
+  	update t_peo set name=#{name}, age=#{age} where num=#{num}
+  </update>
+  
+  </mapper>

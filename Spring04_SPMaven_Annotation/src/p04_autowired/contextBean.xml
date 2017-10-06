@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+	<context:component-scan base-package="p04_autowired"></context:component-scan>
+	<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		
+	<!-- 
+		타입으로 찾아서 무조건 하나이면 OK 두개이상이면 그떄부터 id를 찾기 시작.. 
+		(상황1) 멤버변수와 id가 같은 bean이 1개 있어야함 무조건 
+		(상황2) 멤버변수와 id가 두 bean 모두 다를 때는
+				@Qualifier를 통해 id를 지정검색한다!. 
+	-->
+		
+	<bean id="corp" class="p04_autowired.CorpInfo"
+		p:corpName="우리회사"></bean>	
+	
+	<bean id="corpBean" class="p04_autowired.CorpInfo"
+		p:corpName="우리회사"></bean>
+
+	<bean id="homeBean1" class="p04_autowired.HomeInfo"
+		p:address="우리집1"></bean>
+		
+	<bean id="homeBean2" class="p04_autowired.HomeInfo"
+		p:address="우리집2"></bean>
+	
+	<!-- 
+		다음 빈은 메인에서 container 생성 시 
+		만드는 것이 아니라, 프로그램 진행 중 빈이 만들어진다고
+		가정하자.
+		(반드시 bean이 있어야만 @Autowired 가 가능하다!!)
+		<bean id="schBean" class="p04_autowired.SchoolInfo"
+			p:schName="우리학교"></bean>
+	 -->
+	
+	<bean id="peo" class="p04_autowired.People"></bean>
+	
+	 
+	 
+</beans>

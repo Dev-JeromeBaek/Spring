@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="review_mapper">
+  	<select id="diNameSearch" parameterType="java.lang.Integer" resultType="info">
+  		select * from dasam_deal_info where di_num=#{di_num}
+  	</select>
+  	
+  	<insert id="insertReview" parameterType="review">
+  		insert into dasam_deal_review values(dasam_deal_review_seq.nextval, #{dr_title},#{dr_title_sub},#{dr_content},#{dr_content_sub}, #{dr_di_num},#{dr_m_num},sysdate)
+  	</insert>
+  	
+  	<select id="reviewList" parameterType="java.lang.Integer" resultType="review">
+  		select * from dasam_deal_review where dr_di_num=#{dr_di_num} order by dr_num desc
+  	</select>
+  	
+  	<select id="reviewDetail" parameterType="java.lang.Integer" resultType="review">
+  		select * from dasam_deal_review where dr_num=#{dr_num}
+  	</select>
+  	
+  	<select id="dealInfo" parameterType="java.lang.Integer" resultType="info">
+  		select * from dasam_deal_info where di_num=#{di_num}
+  	</select>
+  	
+  	<select id="memberInfo" parameterType="java.lang.Integer" resultType="mem">
+  		select * from dasam_mem where m_num=#{m_num}
+  	</select>
+  	
+  	<update id="reviewScorePlus" parameterType="review">
+  		update dasam_deal_review set dr_score=#{dr_score} where dr_num=#{dr_num}
+  	</update>
+  	
+  </mapper>

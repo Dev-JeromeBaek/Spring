@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<a href="#content" class="accessibility">컨텐츠 바로가기</a>
+<div class="logo_img">
+    <a href="/home/" tl:area="LOCO" tl:ord="1"><img src="http://img2.tmon.kr/deals/banner/banner20_7527e.png" width="350" height="90" alt="TMON 쇼핑을 뚝딱! 티몬"></img>
+</a>
+</div>
+<div class="srchbar">
+    <div class="src_area" id="search_form">
+        <form name="search_form" method="GET" action="/search/searchEXP" onsubmit="return goSearch()">
+            <fieldset>
+                <legend>상품 검색</legend>
+                <label for="top_srch">
+                    <input type="text" name="keyword" id="search_keyword" style="outline:none" maxlength="30"  value="야나두 구매 시, 삼성스마트빔 0원" autocomplete="off" title="검색어 입력" onfocus="ff_focus();" onblur="ff_blur();"/>
+                    <input type="hidden" name="uis" value="b7bce164" />
+                    <input type="hidden" name="sarea" id="sarea" value="g" />
+                    <input type="hidden" name="st" id="st" value="0" />
+                    <input type="hidden" name="userViewTitle" id="userViewTitle" value="" />
+                    <input type="hidden" name="catSrl" id="catSrl" value="0" />
+                    <input type="hidden" name="catInfo" id="catInfo" value="" />
+                </label>
+                <button type="submit" id="search_submit" class="btn_search">검색</button>
+            </fieldset>
+        </form>
+    </div>
+        </div>
+</body>
+</html>

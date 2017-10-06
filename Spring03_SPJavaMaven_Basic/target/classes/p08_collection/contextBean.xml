@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 1. 컬렉션으로 빈 만들기 -->
+	<bean id="listc" class="java.util.ArrayList"/>
+	
+	<!-- 2. 컬렉션을 멤버로 가지는 빈 이용 방법 -->
+	<bean id="peo1" class="p08_collection.People" 
+			p:name="둘리" p:age="10"/>
+	<bean id="peo2" class="p08_collection.People" 
+			p:name="마이콜" p:age="20"/>
+			
+	<bean id="peoInfo" class="p08_collection.PeopleInfo">
+		<property name="peoInfo">
+			<list>
+				<array>
+					<ref bean="peo1"/>
+				</array>
+				<array>
+					<ref bean="peo2"/>
+				</array>
+			</list>
+		</property>
+		
+		<property name="peoInfo2">
+			<map>
+				<entry key="둘리">
+					<ref bean="peo1"/>
+				</entry>
+				<entry key="마이콜">
+					<ref bean="peo2"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+</beans>

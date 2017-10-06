@@ -1,0 +1,5 @@
+package exmybatis.mvc.exmybatix03.bean;
+
+public class PeopleBean {
+
+}

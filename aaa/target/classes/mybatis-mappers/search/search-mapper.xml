@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="search_mapper">
+  
+  	<!-- 갯수에 상관없이 상품명에 keyWord가 포함된 모든 정보 가져오기  -->
+  	<!-- <select id="SearchKeyWord" parameterType="java.lang.String" resultType="info">
+  		select * from dasam_deal_info where di_name like '%'||#{keyWord}||'%' order by di_num desc
+  	</select> -->
+  	
+  	<!-- 상품명에 keyWord가 포함된 것 중에서 내가 원하는 상품의 갯수만 가져오기 -->
+  	
+  	<!-- 자동보기 검색값 10개 가져오는 sql -->
+  	<select id="SearchKeyWord" parameterType="java.lang.String" resultType="info">
+  		<![CDATA[
+  			 select * from (select rownum rnum, tt.* from (select * from dasam_deal_info where di_name like '%'||#{keyWord}||'%' order by di_num desc) tt) where rnum >= 1 and rnum <= 10
+ 		 ]]> 
+  	</select>
+
+  	<!-- 검색클릭시 15개 가져가는 sql -->
+  	<select id="SearchClick" parameterType="java.lang.String" resultType="info">
+  		<![CDATA[
+  			 select * from (select rownum rnum, tt.* from (select * from dasam_deal_info where di_name like '%'||#{keyWord}||'%' order by di_num desc) tt) where rnum >= 1 and rnum <= 15
+ 		 ]]> 
+  	</select>
+  	
+  	<!-- 자동완성 선택 ! Deal_Info 정보 불러오기 -->
+  	<select id="KeyWordChoice01" parameterType="java.lang.Integer" resultType="info">
+  		select * from dasam_deal_info where di_num=#{keyWord}
+  	</select>
+  	
+  	<!-- 자동완성 선택 ! Deal_Detail 정보 불러오기 -->
+  	<select id="KeyWordChoice02" parameterType="java.lang.Integer" resultType="detail">
+  		select * from dasam_deal_detail where dd_di_num=#{keyWord}
+  	</select>
+  
+  </mapper>

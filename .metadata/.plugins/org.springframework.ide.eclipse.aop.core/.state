@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="Ex_DB03"/>
+<aop-project name="Ex_MyBatis03"/>
+<aop-project name="Hw_Hotel"/>
+<aop-project name="Spring05_SPMaven_AOP">
+<aspect-definition advice-class-name="p04_aop_model03.J04_AdviceCla" advice-method-name="advAfter" advice-type="AFTER" aspect-end-line-number="21" aspect-name="adviceBean" aspect-start-line-number="21" factory-id="org.springframework.ide.eclipse.aop.core.beanAspectDefinitionElementFactory" file="/Spring05_SPMaven_AOP/src/p04_aop_model03/contextBean.xml" pointcut-expression="execution(public * *(..))" proxy-target-class="false">
+<aop-reference advice-type="AFTER" bean="1:BeansModel|2:Spring05_SPMaven_AOP|3:src/p04_aop_model03/contextBean.xml|7:beans:6|8:div:8" bean-file="/Spring05_SPMaven_AOP/src/p04_aop_model03/contextBean.xml" bean-start-line="8" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/Spring05_SPMaven_AOP/src/p04_aop_model03/contextBean.xml" source="=Spring05_SPMaven_AOP/src&lt;p04_aop_model03{J04_AdviceCla.java[J04_AdviceCla~advAfter" source-start-line="18" target="=Spring05_SPMaven_AOP/src&lt;p04_aop_model03{J03_DivCla.java[J03_DivCla~coreWorks" target-start-line="8"/>
+<aop-reference advice-type="AFTER" bean="1:BeansModel|2:Spring05_SPMaven_AOP|3:src/p04_aop_model03/contextBean.xml|7:beans:6|8:mod:9" bean-file="/Spring05_SPMaven_AOP/src/p04_aop_model03/contextBean.xml" bean-start-line="9" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/Spring05_SPMaven_AOP/src/p04_aop_model03/contextBean.xml" source="=Spring05_SPMaven_AOP/src&lt;p04_aop_model03{J04_AdviceCla.java[J04_AdviceCla~advAfter" source-start-line="18" target="=Spring05_SPMaven_AOP/src&lt;p04_aop_model03{J03_ModCla.java[J03_ModCla~coreWorks" target-start-line="8"/>
+</aspect-definition>
+<aspect-definition advice-class-name="p03_aop_model02.J04_AspectCla" advice-method-name="joinPointWorks" advice-type="AROUND" aspect-end-line-number="26" aspect-name="aspectBean" aspect-start-line-number="26" factory-id="org.springframework.ide.eclipse.aop.core.beanAspectDefinitionElementFactory" file="/Spring05_SPMaven_AOP/src/p03_aop_model02/contextBean.xml" pointcut-expression="execution(public * *(..))" proxy-target-class="false">
+<aop-reference advice-type="AROUND" bean="1:BeansModel|2:Spring05_SPMaven_AOP|3:src/p03_aop_model02/contextBean.xml|7:beans:6|8:div:14" bean-file="/Spring05_SPMaven_AOP/src/p03_aop_model02/contextBean.xml" bean-start-line="14" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/Spring05_SPMaven_AOP/src/p03_aop_model02/contextBean.xml" source="=Spring05_SPMaven_AOP/src&lt;p03_aop_model02{J04_AspectCla.java[J04_AspectCla~joinPointWorks~QProceedingJoinPoint;" source-start-line="11" target="=Spring05_SPMaven_AOP/src&lt;p03_aop_model02{J03_DivCla.java[J03_DivCla~coreWorks" target-start-line="8"/>
+<aop-reference advice-type="AROUND" bean="1:BeansModel|2:Spring05_SPMaven_AOP|3:src/p03_aop_model02/contextBean.xml|7:beans:6|8:mod:15" bean-file="/Spring05_SPMaven_AOP/src/p03_aop_model02/contextBean.xml" bean-start-line="15" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/Spring05_SPMaven_AOP/src/p03_aop_model02/contextBean.xml" source="=Spring05_SPMaven_AOP/src&lt;p03_aop_model02{J04_AspectCla.java[J04_AspectCla~joinPointWorks~QProceedingJoinPoint;" source-start-line="11" target="=Spring05_SPMaven_AOP/src&lt;p03_aop_model02{J03_ModCla.java[J03_ModCla~coreWorks" target-start-line="8"/>
+</aspect-definition>
+<aspect-definition advice-class-name="p04_aop_model03.J04_AdviceCla" advice-method-name="advBefore" advice-type="BEFORE" aspect-end-line-number="17" aspect-name="adviceBean" aspect-start-line-number="16" factory-id="org.springframework.ide.eclipse.aop.core.beanAspectDefinitionElementFactory" file="/Spring05_SPMaven_AOP/src/p04_aop_model03/contextBean.xml" pointcut-expression="execution(public * *(..))" proxy-target-class="false">
+<aop-reference advice-type="BEFORE" bean="1:BeansModel|2:Spring05_SPMaven_AOP|3:src/p04_aop_model03/contextBean.xml|7:beans:6|8:div:8" bean-file="/Spring05_SPMaven_AOP/src/p04_aop_model03/contextBean.xml" bean-start-line="8" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/Spring05_SPMaven_AOP/src/p04_aop_model03/contextBean.xml" source="=Spring05_SPMaven_AOP/src&lt;p04_aop_model03{J04_AdviceCla.java[J04_AdviceCla~advBefore~QJoinPoint;" source-start-line="8" target="=Spring05_SPMaven_AOP/src&lt;p04_aop_model03{J03_DivCla.java[J03_DivCla~coreWorks" target-start-line="8"/>
+<aop-reference advice-type="BEFORE" bean="1:BeansModel|2:Spring05_SPMaven_AOP|3:src/p04_aop_model03/contextBean.xml|7:beans:6|8:mod:9" bean-file="/Spring05_SPMaven_AOP/src/p04_aop_model03/contextBean.xml" bean-start-line="9" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/Spring05_SPMaven_AOP/src/p04_aop_model03/contextBean.xml" source="=Spring05_SPMaven_AOP/src&lt;p04_aop_model03{J04_AdviceCla.java[J04_AdviceCla~advBefore~QJoinPoint;" source-start-line="8" target="=Spring05_SPMaven_AOP/src&lt;p04_aop_model03{J03_ModCla.java[J03_ModCla~coreWorks" target-start-line="8"/>
+</aspect-definition>
+<aspect-definition advice-class-name="p04_aop_model03.J04_AdviceCla" advice-method-name="advArterThrowing" advice-type="AFTER_THROWING" aspect-end-line-number="20" aspect-name="adviceBean" aspect-start-line-number="18" factory-id="org.springframework.ide.eclipse.aop.core.beanAspectDefinitionElementFactory" file="/Spring05_SPMaven_AOP/src/p04_aop_model03/contextBean.xml" pointcut-expression="execution(public * *(..))" proxy-target-class="false" throwing="e">
+<aop-reference advice-type="AFTER_THROWING" bean="1:BeansModel|2:Spring05_SPMaven_AOP|3:src/p04_aop_model03/contextBean.xml|7:beans:6|8:div:8" bean-file="/Spring05_SPMaven_AOP/src/p04_aop_model03/contextBean.xml" bean-start-line="8" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/Spring05_SPMaven_AOP/src/p04_aop_model03/contextBean.xml" source="=Spring05_SPMaven_AOP/src&lt;p04_aop_model03{J04_AdviceCla.java[J04_AdviceCla~advArterThrowing~QThrowable;" source-start-line="13" target="=Spring05_SPMaven_AOP/src&lt;p04_aop_model03{J03_DivCla.java[J03_DivCla~coreWorks" target-start-line="8"/>
+<aop-reference advice-type="AFTER_THROWING" bean="1:BeansModel|2:Spring05_SPMaven_AOP|3:src/p04_aop_model03/contextBean.xml|7:beans:6|8:mod:9" bean-file="/Spring05_SPMaven_AOP/src/p04_aop_model03/contextBean.xml" bean-start-line="9" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/Spring05_SPMaven_AOP/src/p04_aop_model03/contextBean.xml" source="=Spring05_SPMaven_AOP/src&lt;p04_aop_model03{J04_AdviceCla.java[J04_AdviceCla~advArterThrowing~QThrowable;" source-start-line="13" target="=Spring05_SPMaven_AOP/src&lt;p04_aop_model03{J03_ModCla.java[J03_ModCla~coreWorks" target-start-line="8"/>
+</aspect-definition>
+<aspect-definition advice-class-name="p04_aop_model03.J04_AdviceCla" advice-method-name="adbAfterReturning" advice-type="AFTER_RETURNING" aspect-end-line-number="24" aspect-name="adviceBean" aspect-start-line-number="22" factory-id="org.springframework.ide.eclipse.aop.core.beanAspectDefinitionElementFactory" file="/Spring05_SPMaven_AOP/src/p04_aop_model03/contextBean.xml" pointcut-expression="execution(public * *(..))" proxy-target-class="false" returning="ret">
+<aop-reference advice-type="AFTER_RETURNING" bean="1:BeansModel|2:Spring05_SPMaven_AOP|3:src/p04_aop_model03/contextBean.xml|7:beans:6|8:div:8" bean-file="/Spring05_SPMaven_AOP/src/p04_aop_model03/contextBean.xml" bean-start-line="8" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/Spring05_SPMaven_AOP/src/p04_aop_model03/contextBean.xml" source="=Spring05_SPMaven_AOP/src&lt;p04_aop_model03{J04_AdviceCla.java[J04_AdviceCla~adbAfterReturning~QObject;" source-start-line="23" target="=Spring05_SPMaven_AOP/src&lt;p04_aop_model03{J03_DivCla.java[J03_DivCla~coreWorks" target-start-line="8"/>
+<aop-reference advice-type="AFTER_RETURNING" bean="1:BeansModel|2:Spring05_SPMaven_AOP|3:src/p04_aop_model03/contextBean.xml|7:beans:6|8:mod:9" bean-file="/Spring05_SPMaven_AOP/src/p04_aop_model03/contextBean.xml" bean-start-line="9" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/Spring05_SPMaven_AOP/src/p04_aop_model03/contextBean.xml" source="=Spring05_SPMaven_AOP/src&lt;p04_aop_model03{J04_AdviceCla.java[J04_AdviceCla~adbAfterReturning~QObject;" source-start-line="23" target="=Spring05_SPMaven_AOP/src&lt;p04_aop_model03{J03_ModCla.java[J03_ModCla~coreWorks" target-start-line="8"/>
+</aspect-definition>
+</aop-project>
+<aop-project name="Spring13_SMVC_JDBC_FileUpDown"/>
+<aop-project name="exex"/>
+<aop-project name="Spring02_SPJava_Maven"/>
+<aop-project name="Spring16_MVC_MyBatis"/>
+<aop-project name="aa"/>
+<aop-project name="Spring12_SMVC_JDBC_SimpleConn"/>
+<aop-project name="Ex_DB04"/>
+<aop-project name="Ex_MyBatis02"/>
+<aop-project name="Spring01_SPJava_intro"/>
+<aop-project name="Spring06_SPMaven_JDBC01"/>
+<aop-project name="Spring11_SMVC_Basic"/>
+<aop-project name="Spring07_SPMaven_jdbcTemplate"/>
+<aop-project name="Spring04_SPMaven_Annotation"/>
+<aop-project name="ex0221"/>
+<aop-project name="z_ram"/>
+<aop-project name="Ex_DB01"/>
+<aop-project name="Ex_DB05"/>
+<aop-project name="Ex_MyBatis01"/>
+<aop-project name="Spring09_DynaminWebMaven_MVC_Structure"/>
+<aop-project name="Spring14_SMVC_MyBatis_SimpleConn"/>
+<aop-project name="SpringQuiz01"/>
+<aop-project name="YEOB_1st_Main"/>
+<aop-project name="ex0220"/>
+<aop-project name="Spring10_SMVC_Structure"/>
+<aop-project name="Ex_DB02"/>
+<aop-project name="Spring08_SPMaven_MyBatis"/>
+<aop-project name="aaa"/>
+<aop-project name="Spring15_SMVC_WebBasic"/>
+<aop-project name="dev01"/>
+<aop-project name="Spring03_SPJavaMaven_Basic"/>
+</aop-reference-model>

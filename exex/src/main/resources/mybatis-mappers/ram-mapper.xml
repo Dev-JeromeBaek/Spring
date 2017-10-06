@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="ramMapper">
+
+<!-- [insertOne1] -->
+	<insert id="insertOne1" parameterType="ram">
+		insert into houhou(num, name, price, expl) values(houhou_seq.nextval, #{name}, #{price}, #{expl})
+	</insert>
+		
+<!-- [insertOne2] -->
+	<insert id="insertOne2" parameterType="ram">
+		insert into houhou values(houhou_seq.nextval, #{name}, #{price}, #{expl}, #{orgName}, #{sysName})
+	</insert>
+	
+<!-- [selectList] -->
+	<select id="selectList" resultType="ram">
+		select * from houhou order by num
+	</select>
+	
+<!-- [selectOne] -->
+	<select id="selectOne" parameterType="java.lang.Integer" resultType="ram">
+		select * from houhou where num=#{num}
+	</select>
+
+<!-- [updateOne] -->
+	<update id="updateOne" parameterType="ram">
+		update houhou set name=#{name}, price=#{price}, expl=#{expl}, orgName=#{orgName}, sysName=#{sysName} where num=#{num}
+	</update>
+
+<!-- [deleteOne] -->
+	<delete id="deleteOne" parameterType="java.lang.Integer">
+		delete from houhou where num=#{num}
+	</delete>
+	
+</mapper>

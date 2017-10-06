@@ -1,0 +1,10 @@
+package exmybatis.mvc.exmybatis03;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class PeopleController {
+	
+	
+	
+}

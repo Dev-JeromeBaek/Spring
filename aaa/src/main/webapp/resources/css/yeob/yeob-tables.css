@@ -1,0 +1,168 @@
+@CHARSET "UTF-8";
+
+fieldset {
+	min-width: 0;
+	padding: 0;
+	margin: 0;
+	border: 0
+}
+
+legend {
+	display: block;
+	width: 100%;
+	padding: 0;
+	margin-bottom: 20px;
+	font-size: 21px;
+	line-height: inherit;
+	color: #333;
+	border: 0;
+	border-bottom: 1px solid #e5e5e5
+}
+
+label {
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+	font-weight: 700
+}
+
+
+button, input, optgroup, select, textarea {
+	margin: 0;
+	font: inherit;
+	color: inherit
+}
+
+button {
+	overflow: visible
+}
+
+button, select {
+	text-transform: none
+}
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+	-webkit-appearance: button;
+	cursor: pointer
+}
+
+button[disabled], html input[disabled] {
+	cursor: default
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+	padding: 0;
+	border: 0
+}
+
+
+input[type=search] {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box
+}
+
+input[type=radio], input[type=checkbox] {
+	margin: 4px 0 0;
+	margin-top: 1px \9;
+	line-height: normal
+}
+
+input[type=file] {
+	display: block
+}
+
+input[type=range] {
+	display: block;
+	width: 100%
+}
+
+select[multiple], select[size] {
+	height: auto
+}
+
+input[type=file]:focus, input[type=radio]:focus, input[type=checkbox]:focus
+	{
+	outline: thin dotted;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px
+}
+
+output {
+	display: block;
+	padding-top: 7px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	input[type=date], input[type=time], input[type=datetime-local], input[type=month]
+		{
+		line-height: 34px
+	}
+	
+	input[type=date].input-sm, input[type=time].input-sm, input[type=datetime-local].input-sm,
+		input[type=month].input-sm {
+		line-height: 30px
+	}
+	
+	input[type=date].input-lg, input[type=time].input-lg, input[type=datetime-local].input-lg,
+		input[type=month].input-lg {
+		line-height: 46px
+	}
+}
+
+input[type=radio][disabled], input[type=checkbox][disabled], input[type=radio].disabled,
+	input[type=checkbox].disabled, fieldset[disabled] input[type=radio],
+	fieldset[disabled] input[type=checkbox] {
+	cursor: not-allowed
+}
+
+textarea.input-sm, textarea.form-group-sm .form-control, select[multiple].input-sm,
+	select[multiple].form-group-sm .form-control {
+	height: auto
+}
+
+
+
+
+
+
+.clearfix:before, .clearfix:after,.row:before, .row:after {
+	display: table;
+	content: " "
+}
+
+.clearfix:after, .row:after {
+	clear: both
+}
+
+.row {
+	margin-right: -15px;
+	margin-left: -15px
+}
+
+thead {
+		display: table-header-group
+	}
+	
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td,
+	.table>tbody>tr>td, .table>tfoot>tr>td {
+	padding: 8px;
+	line-height: 1.42857143;
+	vertical-align: top;
+	border-top: 1px solid #ddd
+}
+
+.table>thead>tr>th {
+	vertical-align: bottom;
+	border-bottom: 2px solid #ddd
+}
+
+.table-condensed>thead>tr>th, .table-condensed>tbody>tr>th,
+	.table-condensed>tfoot>tr>th, .table-condensed>thead>tr>td,
+	.table-condensed>tbody>tr>td, .table-condensed>tfoot>tr>td {
+	padding: 5px
+}
+

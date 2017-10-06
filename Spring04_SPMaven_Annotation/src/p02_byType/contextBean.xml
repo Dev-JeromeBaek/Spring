@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="bibibi" class="p02_byType.ClaBBB"
+		p:msg="bbb빈의 메시지"></bean>
+		
+	
+<!-- 	<bean id="sadasd" class="p02_byType.ClaBBB" -->
+<!-- 		p:msg="bbb빈의 메시지"></bean> -->
+	
+	<bean id="aaa" class="p02_byType.ClaAAA" autowire="byType"></bean>
+	<!-- autowire="byType" -->
+	<!-- => aaa의 멤버변수의 타입(Class)과 -->
+	<!--    같은 타입(Class)을 가진 bean을 주입(붙인다.) -->
+	<!-- 같은 class가 2개이상이면 에러 -->
+</beans>

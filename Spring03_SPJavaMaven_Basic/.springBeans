@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.8.3.201612191259-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+		<config>src/p01_makeBean/contextBean.xml</config>
+		<config>src/p02_setter/contextBean.xml</config>
+		<config>src/p03_constructor/contextBean.xml</config>
+		<config>src/p04_referenceBean/contextBean.xml</config>
+		<config>src/p05_extends01/contextBean.xml</config>
+		<config>src/p05_extends02/contextBean.xml</config>
+		<config>src/p06_interface/contextBean.xml</config>
+		<config>src/p07_poly/contextBean.xml</config>
+		<config>src/p08_collection/contextBean.xml</config>
+		<config>src/p09_properties01/contextBean.xml</config>
+		<config>src/p09_properties02/contextBean.xml</config>
+		<config>src/p10_useBeanEx/contextBean.xml</config>
+	</configs>
+	<autoconfigs>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

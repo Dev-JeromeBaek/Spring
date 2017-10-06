@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="dealMapper">
+  
+  	<insert id="dealInfo2" parameterType="info">
+		insert into dasam_deal_info(di_num, di_name, di_category, di_orgname, di_sysname, di_exp, di_exp_sub, di_price, di_c_num, di_date) 
+		values(dasam_deal_info_seq.nextval, #{di_name}, #{di_category}, #{di_orgName}, #{di_sysName}, #{di_exp}, #{di_exp_sub}, #{di_price}, #{di_c_num}, sysdate)
+	</insert>
+	
+	<insert id="dealInfo" parameterType="info">
+		insert into dasam_deal_info
+		values(dasam_deal_info_seq.nextval,#{di_name},#{di_category},#{di_orgName},#{di_sysName},#{di_exp},#{di_c_num},sysdate)
+	</insert>
+
+	<insert id="dealDetail" parameterType="detail">
+		insert into dasam_deal_detail
+		values(dasam_deal_detail_seq.nextval,#{dd_name},#{dd_kind},#{dd_price},#{dd_amount},#{dd_di_num})
+	</insert>
+
+	<select id="selectInfo" resultType="info">
+		select * from dasam_deal_info order by di_num desc
+	</select>
+	
+	
+	<select id="selectDetail" resultType="detail">
+		select * from dasam_deal_detail where dd_di_num 
+	</select>
+	
+	 <select id="selectDetaill" resultType="detail">
+		select * from dasam_deal_detail where dd_num 
+	</select> 
+	
+	<insert id="insertDDList" parameterType="detail">
+		insert into dasam_deal_detail values(dasam_deal_detail_seq.nextval,#{dd_name},#{dd_kind},#{dd_price},#{dd_amount},dasam_deal_info_seq.currval)
+	</insert>
+	
+	<select id="digitalList" parameterType="info" resultType="info">
+  		select * from dasam_deal_info where di_category=#{di_category} order by di_num desc
+  	</select>
+  	
+  	<select id="digitalOne1" parameterType="java.lang.Integer" resultType="info">
+  		select * from dasam_deal_info where di_num=#{di_num}
+  	</select>
+  	
+  	<select id="digitalOne2" parameterType="java.lang.Integer" resultType="detail">
+  		select * from dasam_deal_detail where dd_di_num=#{di_num}
+  	</select>
+  	
+  	<select id="othersDealListAll" resultType="info">
+  		select * from dasam_deal_info order by di_date desc
+  	</select>
+  	
+  	
+  	<!-- 03.18 -->
+  	<select id="selectDealList" parameterType="String" resultType="info">
+		select * from dasam_deal_info where di_category=#{item2}
+	</select>
+	
+  	<select id="selectDDList" resultType="detail">
+		select * from dasam_deal_detail where dd_di_num=#{di_num}
+	</select>
+	
+	<select id="searchList" resultType="info">
+		select * from dasam_deal_info where di_name like #{key}
+	</select>
+	
+	<select id="selectDDOne" resultType="detail">
+		select * from dasam_deal_detail where dd_num=#{dd_num}
+	</select>
+  	<!--  -->
+  	<!-- 해당 상품 리뷰들의 회원 정보 불러오기//////////////////////////////////////////////////////////////////// -->
+	<select id="selectDealReviewMem" resultType="mem">
+		select m.* from dasam_mem m, (select distinct b_m_num from dasam_buy where b_di_num=#{di_num}) mm where m.m_num=mm.b_m_num
+	</select>
+	
+	<!-- 상품 문의 등록 -->
+	<insert id="insertDealQna" parameterType="dq">
+		insert into dasam_deal_qna(dq_num,dq_content,dq_di_num,dq_m_num,dq_date) values(dasam_deal_qna_seq.nextval,#{dq_content},#{dq_di_num},#{dq_m_num},sysdate)
+	</insert>
+	
+	<!-- 상세보기에서 상품 문의 목록 가져오기 -->
+	<select id="selectDQList" resultType="dq">
+		select * from dasam_deal_qna where dq_di_num=#{di_num} order by dq_date desc
+	</select>
+	
+	<!-- 상세보기에서 상품 문의 회원 목록 가져오기 -->
+	<select id="selectDQMemList" resultType="mem">
+		select m.* from dasam_mem m, (select distinct dq_m_num from dasam_deal_qna where dq_di_num=#{di_num}) mm where m.m_num=mm.dq_m_num
+	</select>
+	
+	<!-- 상품 문의 정보 조회-->
+	<select id="selectDQOne" resultType="dq">
+		select * from dasam_deal_qna where dq_num=#{dqnum}
+	</select>
+	
+	<!-- 기업의 상품 문의 목록 조회 -->
+	<select id="selectCorpDQList" resultType="dq">
+<!-- 		select * from dasam_deal_qna q,(select di_num from dasam_deal_info where di_c_num=#{corpNum}) qq where q.dq_di_num=qq.di_num -->
+		select * from dasam_deal_qna where dq_di_num=#{num} order by dq_date desc
+	</select>
+	
+  	<!-- 기업회원 상품문의 답변 등록하기 -->
+  	<update id="insertDQAns" parameterType="mapper">
+  		update dasam_deal_qna set dq_ans=#{str1},dq_ans_date=sysdate where dq_num=#{inte1}
+  	</update>
+  	
+  
+  	<!-- 백팀장 추가 딜 정보.. -->
+  	<!-- 승인대기 목록 뽑아오기 -->
+  	<select id="approveNullInfo" resultType="info">
+  		select * from dasam_deal_info where di_approve is null order by di_num asc
+  	</select>
+  	
+  	<!-- 승인 딜 목록 -->
+  	<select id="dealApproveList" parameterType="java.lang.String" resultType="info">
+  		select * from dasam_deal_info where di_approve=#{YES} order by di_date desc
+  	</select>
+  	
+  	<!-- 승인취소 딜 목록 -->
+  	<select id="dealCancelList" parameterType="java.lang.String" resultType="info">
+  		select * from dasam_deal_info where di_approve=#{NO} order by di_date desc
+  	</select>
+  	
+  	<!-- 승인상태 변경 -->
+  	<update id="upStatusDeal" parameterType="mapper">
+  		update dasam_deal_info set di_approve=#{str1} where di_num=#{inte1}
+  	</update>
+  	
+  	<select id="selectDIOne" parameterType="java.lang.Integer" resultType="info">
+  		select * from dasam_deal_info where di_num=#{di_num}
+  	</select>
+  	
+  	<!-- 딜 승인 취소 msg -->
+  	<update id="updateDealExplain" parameterType="mapper">
+  		update dasam_deal_info set di_exp=#{str1}, di_exp_sub=#{str2}, di_approve=#{str3}, di_date=sysdate where di_num=#{inte1}
+  	</update>
+  	
+  	<!-- 딜 상세 전체 삭제 -->
+  	<delete id="deleteDealDetailAll" parameterType="java.lang.Integer">
+  		delete from dasam_deal_detail where dd_di_num=#{di_num}
+  	</delete>
+  	
+  	<!-- 딜 정보 전체 삭제 -->
+  	<delete id="deleteDealInfoAll" parameterType="java.lang.Integer">
+  		delete from dasam_deal_info where di_c_num=#{c_num}
+  	</delete>
+  	
+  	<!-- 딜 정보 삭제 -->
+  	<delete id="deleteDealInfo" parameterType="java.lang.Integer">
+  		delete from dasam_deal_info where di_num=#{di_num}
+  	</delete>
+  	
+  	
+  	<update id="updateAmount" parameterType="mapper">
+  		update dasam_deal_detail set dd_amount=#{inte2} where dd_num=#{inte1}
+  	</update>
+  	
+  	<!-- 수인이 고생했다... -->
+  	
+  	<select id="AllLocal"  parameterType="info" resultType="detail" >
+		SELECT dasam_deal_detail.dd_num,dasam_deal_detail.dd_price,dasam_deal_detail.dd_name,dasam_deal_detail.dd_kind,dasam_deal_detail.dd_AMOUNT from dasam_deal_detail JOIN dasam_deal_info
+		on dasam_deal_detail.dd_di_num = dasam_deal_info.di_num where dasam_deal_info.di_num=#{num}
+	</select>
+	
+	<select id="AllLocal2" parameterType="info" resultType="info">
+		select * from dasam_deal_info where di_num=#{num}
+	</select>
+	
+	<!-- 기업회원 페이지 -->
+	<!-- [나의 딜 보기(모아보기)] -->
+	<select id="showDealListAll" parameterType="java.lang.Integer" resultType="info">
+		select * from dasam_deal_info where di_c_num=#{c_num} order by di_num desc
+	</select>
+	
+	<!-- [나의 딜 보기(상태별 딜 YES, NO, null)] -->
+	<select id="showStatusDealList" parameterType="mapper"  resultType="info">
+		select * from dasam_deal_info where di_c_num=#{inte1} 
+		<choose>
+			<when test="str1 == null">
+				and di_approve is null order by di_date desc
+			</when>
+			<otherwise>
+				and di_approve=#{str1} order by di_date desc
+			</otherwise>
+		</choose>
+	</select>
+	
+	<!-- 구매내역 상세 가져오기 -->
+	<select id="selectBuyDetailList" parameterType="java.lang.Integer" resultType="buyDetail">
+		select * from dasam_buy_detail where bd_b_num=#{b_num} order by bd_b_num desc 
+	</select>
+	
+	<!-- ==================================================================== -->
+	<!-- 03.22 정훈형님 -->
+	<select id="fashionCategory" parameterType="info" resultType="info">
+		select * from dasam_deal_info where di_category = #{di_category}
+	</select>
+	
+	<select id="fashionKind" parameterType="detail" resultType="detail">
+		select * from dasam_deal_detail where dd_kind = #{dd_kind}
+	</select>
+  	
+  	<select id="fashionInfoSelectOne" parameterType="Integer" resultType="info">
+  		select * from dasam_deal_info where di_num = #{di_num}
+  	</select>	
+  	
+  	<select id="fashionDetailSelectList" parameterType="Integer" resultType="detail">
+  		select * from dasam_deal_detail where dd_di_num = #{dd_di_num} order by dd_num asc
+  	</select>	
+	<!-- ==================================================================== -->
+	
+	<!-- 해당 상품 리뷰들 불러오기 -->
+	<select id="selectDealReview" resultType="review">
+		select * from dasam_deal_review where dr_di_num=#{di_num}
+	</select>
+	
+	<!-- 0327//////////////////////////////////////////////////// -->
+  	<select id="countDRList" resultType="mapper">
+  		select cc.di_num inte1,count(*) inte2 from dasam_deal_review dr,(select di_num from dasam_deal_info where di_c_num=#{corpNum}) cc where dr.dr_di_num=cc.di_num group by cc.di_num
+   	</select>
+   	
+   	<select id="countDQList" resultType="mapper">
+   		select cc.di_num inte1,count(*) inte2 from dasam_deal_qna dq,(select di_num from dasam_deal_info where di_c_num=#{corpNum}) cc where dq.dq_di_num=cc.di_num group by cc.di_num
+   	</select>
+  	
+  	<delete id="delReview">
+  		delete dasam_deal_review where dr_num=#{dr_num}
+  	</delete>
+  	
+  </mapper>

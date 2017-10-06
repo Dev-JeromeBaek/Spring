@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.8.3.201612191259-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+		<config>src/p01_byName/contextBean.xml</config>
+		<config>src/p02_byType/contextBean.xml</config>
+		<config>src/p03_componentScan/contextBean.xml</config>
+		<config>src/p04_autowired/contextBean.xml</config>
+		<config>src/p05_resource/contextBean.xml</config>
+		<config>src/p06_required/contextBean.xml</config>
+		<config>src/p07_properties/contextBean.xml</config>
+		<config>src/p08_quiz/contextBean.xml</config>
+	</configs>
+	<autoconfigs>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

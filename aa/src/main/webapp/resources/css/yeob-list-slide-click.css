@@ -1,0 +1,56 @@
+/*  빽사장 css 파일 모듈	 */
+
+/******* 인코딩설정 및 폰트 설정 ******/
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+/*
+/************************************************
+	      JCAROUSEL LITE		
+************************************************/
+.m_rooms_list{background:url("/aa/resources/img/rooms_bg.jpg") fixed center center;height:525px;text-align:center;}
+.m_rooms_list h3{padding-top:70px;text-align:center;color:#fff;font-size:24px;font-weight:700;}
+
+#list {
+position:relative;
+	height:500px;
+	width:1260px;margin:0 auto;	 
+	overflow:hidden;
+}
+.m_rooms_wrap #list {width:1140px; } 
+.slider {
+	 
+	margin-top:38px;
+
+}
+	
+.slider ul {
+ 
+}
+
+.slider ul li {
+	width:322px;
+	height:296px;
+	
+
+}
+
+#list .btn_slide{color:#fff;}
+.btn_slide.btn_title{margin-top:10px;}
+.btn_slide.btn_prev{position:absolute;left:530px;top:10px;cursor: pointer;}
+.btn_slide.btn_next{position:absolute;right:530px;top:10px;cursor: pointer;}
+
+.red_b_wrap{display:none;}
+.slider li{position:relative;}
+.slider li:hover .red_b_wrap{display:block;z-index:9999;cursor: pointer;}
+
+.red_b_wrap .red_bg{position:absolute;left:14px;top:0px;background:#c3141e;opacity:0.80;filter:alpha(opacity=80);width:293px;height:293px;cursor: pointer;}
+.red_b_wrap .red_txt{position:absolute;left:14px;top:0px;margin:0 auto;margin-top:100px;width:293px;text-align:center;}
+.red_b_wrap .red_txt .red_txt_box{width:150px;border:2px solid #fff;padding:25px;color:#fff;margin:0 auto;}
+.red_b_wrap .red_txt .red_txt_box p:first-child{font-size:20px;font-weight:800;}
+.red_b_wrap .red_txt .red_txt_box p span{}
+.red_b_wrap .red_txt .red_txt_box p span:first-child{font-size:18px;font-weight:400;}
+
+
+
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;zz/src/main/resources/context-config[&apos; to &apos;context-config&apos;" description="Rename resource &apos;context-config[&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/context-config[" name="context-config" stamp="1488175889337" updateReferences="true"/>
+</session>

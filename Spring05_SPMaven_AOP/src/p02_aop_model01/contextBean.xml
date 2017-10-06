@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 프레임워크쪽에 전달할 Bean객체 -->
+	<!-- DefaultAdvisorAutoProxyCreator -->
+	
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"></bean>
+	
+	<bean id="div" class="p02_aop_model01.J03_DivCla"></bean>
+	<bean id="mod" class="p02_aop_model01.J03_ModCla"></bean>
+	
+	<bean id="adviceBean" 
+			class="p02_aop_model01.J04_AdviceCla"></bean>
+			
+			
+<!-- 	위에 bean들의 관계를 설정하는것에대한 명시하는 Bean -->
+	<bean id="adviceSet"
+			class="org.springframework.aop.aspectj.AspectJExpressionPointcutAdvisor">
+		
+<!-- 		공통기능이 구현된 Bean -->
+		<property name="advice" ref="adviceBean"></property>
+<!-- 		어떤 형태의 메소드에 접근할것인가? -->
+		<property name="expression" value="execution(public * *(..))"></property>
+				
+	</bean>
+	
+	<!-- 
+		숙제 : pointCut expression 알아오기
+			(Spring Aop pointcut 표현식)
+	 -->
+	<!-- 
+	execution(①수식어패턴? ②리턴타입패턴 ③패키지패턴? 이름패턴(④파라미터패턴)
+
+	① 수식어패턴 부분은 생략 가능한 부분으로서 public, protected 등이 온다.
+	②리턴타입패턴 부분은 리턴 타입을 명시한다.
+	③클래스이름패턴 과 이름패턴 부분은 매칭될 파라미터에 대해서 명시한다.
+	④파라미터패턴 부분은 매칭될 파라미터에 대해서 명시한다.
+
+	각 패턴은 '*' 을 이용하여 모든 값을 표현할 수 있다. 또한 '..'을 이용하여 0개 이상이라는 의미를 
+	표현할 수 있다.
+
+	ex ) public * com.project.abcd.service.mgr..*.*(..)
+	리턴 타입이 모든 것이고, com.project.abcd.service.mgr 패키지 및 하위 패키지에 있는
+	파라미터가 0개 이상인 모든 메서드
+	
+	○ 설정 예
+        ● execution(public void set*(..))
+          - 리턴 타입이 void이고 메서드 이름이 set으로 시작하고, 파라미터가 0개 이상인 메서드 호출.
+        ● execution(* kame.spring.chap03.core.*.*())
+          - kame.spring.chap03.core 패키지의 파라미터가 없는 모든 메서드 호출.
+        ● execution(*.kame.spring.chap03.core..*.*(..))
+          - kame.spring.chap03.core 패키지 및 하위 패키지에 있는 파라미터가 0개 이상인 메서드 호출.
+        ● execution(Integer kame.spring.chap03.core.WriteArticleService.write(..))
+          - 리턴 타입이 Integer인 WriteArticleService 인터페이스의 write() 메서드 호출.
+        ● execution(* get*(*))
+          - 이름이 get으로 시작하고 1개의 파라미터를 갖는 메서드 호출.
+        ● execution(* get*(*, *))
+          - 이름이 get으로 시작하고 2개의 파라미터를 갖는 메서드 호출.
+        ● execution(* read*(Integer, ..))
+          - 메서드 이름이 read로 시작하고, 첫 번째 파라미터 타입이 Integer이며, 1개 이상의 파라미터를 갖는 메서드 호출.
+          
+	    ■ within 명시자
+      - 메서드가 아닌 특정 타입에 속하는 메서드를 Pointcut으로 설정할 때 사용.
+      
+      ○ 설정 예
+        ● within(kame.spring.chap03.core.WriteArticleService)
+          - WriteArticleService 인터페이스의 모든 메서드 호출.
+        ● within(kame.spring.chap03.core.*)
+          - kame.spring.chap03.core 패키지에 있는 모든 메서드 호출.
+        ● within(kame.spring.chap03.core..*)
+          - kame.spring.chap03.core 패키지 및 그 하위 패키지에 있는 모든 메서드 호출.
+          
+    ■ bean 명시자
+      - 스프링 2.5 버전부터 스프링에서 추가적으로 제공하는 명시자.
+      - 스프링 빈 이름을 이용하여 Pointcut을 정의.
+      - 빈 이름의 패턴을 갖는다.
+      ○ 설정 예
+        ● bean(writeArticleService)
+          - 이름이 writeArticleService인 빈의 메서드 호출.
+        ● bean(*ArticleService)
+          - 이름이 ArticleServie로 끝나는 빈의 메서드 호출.
+          
+    ■ 표현식 연결
+      - 각각의 표현식은 '&&' 나 '||' 연산자를 이용하여 연결 가능.
+      ○ @Aspect 어노테이션을 이용하는 경우
+        - '&&' 연산자를 사용하여 두 표현식을 모두 만족하는 Joinpoint에만 Advice가 적용.
+ 	@AfterThrowing(
+    	pointcut = "execution(public * get*()) && execution(public void set*(..))")
+ 	public void throwingLogging() {
+    	...
+ 	}
+    ○ XML 스키마를 이용하여 Aspect를 설정하는 경우
+      - '&&'나 '||' 연산자를 사용.
+ 		<aop:pointcut id="propertyMethod"
+     		expression="execution(public * get*()) &amp;&amp; execution(public void set*(..))" />
+   - XML 문서이기 때문에 값에 들어가는 '&&' '||'를 '&amp;&amp;'로 표현.
+    - 설정파일에서 '&&'나 '||' 대신 'and'와 'or'를 사용할 수 있도록 하고 있음.
+ 		<aop:pointcut id="propertyMethod"
+    		 expression="execution(public * get*()) and execution(public void set*(..))" />
+
+  □ 프록시 구현 방식에 따른 execution 적용 차이
+    - Pointcut은 실제로 프록시가 구현하고 있는 인터페이스를 기준으로 Pointcut을 적용.
+    - 인터페이스를 구현하고 있는 대상 객체에 대해서 Pointcut을 정의하려면 인터페이스를 기준으로 Pointcut을 작성.
+ 		<aop:aspect id="cacheAspect" ref="cache">
+    		<aop:around method="read"
+    		    pointcut="execution(public * kame..core.ReadArticleServiceImpl.get*(..))" />
+ 		</aop:aspect>
+
+ 		<bean id="readArticleService" class="kame.spring.chap03.core.ReadArticleServiceImpl" />
+   		      - ReadArticleServiceImpl 클래스가 ReadArticleService 인터페이스를 구현하고 있다면, 
+   		        <aop:around>는 ReadArticleServiceImpl 클래스의 get으로 시작하는 메서드에 적용.
+   		        (<aop:around> 태그에서 명시한 Pointcut은 readArticleService 빈에는 적용되지 않음.)
+    		     - ReadArticleServiceImpl 클래스가 인터페이스를 구현하고 있지 않다면,
+   생성된 프록시는 ReadArticleServiceImpl 클래스를 상속받아 생성됨. (Pointcut은 readArticleService 빈에만 적용.)
+	-->
+
+</beans>

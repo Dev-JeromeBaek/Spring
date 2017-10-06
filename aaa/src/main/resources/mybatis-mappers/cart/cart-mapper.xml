@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="cartMapper">
+  	<insert id="insertCart" parameterType="cart">
+  		insert into dasam_cart values(dasam_cart_seq.nextval,#{cart_di_num},#{cart_dd_num},#{cart_amount},#{cart_price},#{cart_m_num})
+  	</insert>
+  	
+  	<select id="cartList" resultType="cart">
+  		select * from dasam_cart where cart_m_num=#{m_num} order by cart_di_num desc
+  	</select>
+  	
+  	<update id="updateAmount">
+  		update dasam_cart set cart_amount=#{cart_amount} where cart_num=#{cart_num}
+  	</update>
+  	
+  	<select id="cartDIList" resultType="info">
+  		select di.* from dasam_deal_info di, (select cart_di_num from dasam_cart where cart_m_num=#{m_num} group by cart_di_num) ii where di.di_num=ii.cart_di_num
+  	</select>
+  	
+  	<select id="cartDDList" resultType="detail">
+  		select dd.* from dasam_deal_detail dd, (select cart_dd_num from dasam_cart where cart_m_num=#{m_num} group by cart_dd_num) cdd where dd.dd_num=cdd.cart_dd_num 
+  	</select>
+  	
+  	<select id="cartCorpList" resultType="corp">
+  		select corp.* from dasam_corp corp, (select di.di_c_num from dasam_deal_info di, (select cart_di_num from dasam_cart where cart_m_num=#{m_num}) ct where di.di_num=ct.cart_di_num group by di.DI_C_NUM) cd where corp.c_num=cd.di_c_num
+  	</select>
+  
+  	<delete id="deleteOne" parameterType="mapper">
+  		delete dasam_cart where cart_m_num=#{inte2} and cart_di_num=#{inte1}
+  	</delete>
+  	
+  	<delete id="deleteAmount" parameterType="mapper">
+  		delete dasam_cart where cart_m_num=#{inte1} and cart_dd_num=#{inte2}
+  	</delete>
+  	
+  	<update id="updateAA">
+  		update dasam_cart set cart_amount=#{inte3} where cart_m_num=#{inte1} and cart_dd_num=#{inte2}
+  	</update>
+  	
+  </mapper>

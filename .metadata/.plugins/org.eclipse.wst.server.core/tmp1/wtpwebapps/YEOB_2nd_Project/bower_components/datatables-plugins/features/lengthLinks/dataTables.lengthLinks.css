@@ -1,0 +1,8 @@
+[genuitec-file-id="wc2-16"],[genuitec-lp-path="/YEOB_2nd_Project/WebContent/bower_components/datatables-plugins/features/lengthLinks/dataTables.lengthLinks.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+
+div.dataTables_length a.active {
+	color: black;
+}

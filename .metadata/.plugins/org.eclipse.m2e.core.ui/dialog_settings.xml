@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="ciManagementUrl">
+			<item value="https://travis-ci.org/mybatis/spring"/>
+		</list>
+		<list key="ciManagementSystem">
+			<item value="Travis CI"/>
+		</list>
+		<list key="issueManagementSystem">
+			<item value="GitHub Issue Management"/>
+		</list>
+		<list key="issueManagementUrl">
+			<item value="https://github.com/mybatis/spring/issues"/>
+		</list>
+	</section>
+	<section name="wizardPage">
+		<list key="groupId">
+			<item value="Z_Ram"/>
+			<item value="ex0221"/>
+			<item value="Spring09_DynaminWebMaven_MVC_Structure"/>
+			<item value="Spring08_SPMaven_MyBatis"/>
+			<item value="ex01"/>
+			<item value="ex0220_2"/>
+			<item value="Spring07_SPMaven_jdbcTemplate"/>
+			<item value="SpringQuiz01"/>
+			<item value="Spring06_SPMaven_JDBC01"/>
+			<item value="ex0220"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="Z_Ram"/>
+			<item value="ex0221"/>
+			<item value="Spring09_DynaminWebMaven_MVC_Structure"/>
+			<item value="Spring08_SPMaven_MyBatis"/>
+			<item value="ex01"/>
+			<item value="ex0220_2"/>
+			<item value="Spring07_SPMaven_jdbcTemplate"/>
+			<item value="SpringQuiz01"/>
+			<item value="Spring06_SPMaven_JDBC01"/>
+			<item value="ex0220"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+</section>

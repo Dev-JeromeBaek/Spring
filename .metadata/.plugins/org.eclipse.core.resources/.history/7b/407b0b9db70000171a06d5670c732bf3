@@ -1,0 +1,86 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Yoeb's Home</title>
+	
+	<%-- .js 파일 --%>
+	<script type="text/javascript" src="/aaa/resources/js/yeob/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="/aaa/resources/js/yeob/yeob.js"></script>
+
+	<%-- .css 파일 --%>
+	<link rel="stylesheet" href="/aaa/resources/css/yeob/yeob-whole.css" />
+	<link rel="stylesheet" href="/aaa/resources/css/yeob/yeob-top-menu.css" />
+	
+	
+	<%-- jquery.ui (.css) --%>
+	
+	<%-- jquery.ui (.js) --%>
+	<style type="text/css">
+	.topView {
+		width:1500px;
+		height: 200px;
+/* 		border:1; */
+		background-color:gray; 
+		text-align:center;
+		margin-left: 200px;
+		float: left;
+	}
+	.middleView{
+		width:1920px;
+		height: 50px;
+/* 		height: auto; */
+/* 		border:1; */
+		background-color:red; 
+		text-align:center;
+/* 		margin-left: 200px; */
+		float: left;
+	}
+	
+ 	.leftView { 
+ 		width:10%; 
+ 		background-color: blue; 
+ 		float: left;
+ 	} 
+ 	.centerView { 
+ 		width:80%; 
+ 		background-color: fuchsia; 
+ 		float: left;
+ 	} 
+ 	.rightView{ 
+ 		width:10% 
+ 		background-color: orange; 
+ 		float: left;
+ 	} 
+	.bottomView{
+		width:1920px;
+		height: 50px;
+		background-color: green;
+		float: left;
+	}
+	</style>
+
+</head>
+<body>
+	<div class="topView">
+	
+	</div>
+	<div class="middleView">
+		<div class="leftView">
+		
+		</div>
+		<div class="CenterView">
+		
+		</div>
+		<div class="rightView">
+		
+		</div>
+	</div>
+	<div class="bottomView">
+	
+	</div>
+</body>
+</html>

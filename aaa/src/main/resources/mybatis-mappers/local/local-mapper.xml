@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="localMapper">
+	<select id="Gangnam" resultType="info">
+		select * from dasam_deal_info where di_category='강남' order by di_num desc
+	</select>
+
+	<select id="HongikUniv_Hapjeong_Sangsu" resultType="info">
+		select * from dasam_deal_info where di_category='홍대·합정·상수' order by di_num desc
+	</select>
+
+	<select id="Myeongdong_Cityhall_Junggu" resultType="info">
+		select * from dasam_deal_info where di_category='명동·시청·중구' order by di_num desc
+	</select>
+
+	<select id="Jamsill_Sincheon" resultType="info">
+		select * from dasam_deal_info where di_category='잠실·신천' order by di_num desc
+	</select>
+
+<select id="Seocho_Bangbae_Yangjae" resultType="info">
+	select * from dasam_deal_info where di_category='서초·방배·양재' order by di_num desc
+	</select>
+	
+	<select id="Daehangno_Suyu" resultType="info">
+		select * from dasam_deal_info where di_category='대학로·수유' order by di_num desc
+	</select>
+	
+	<select id="Apgujeong_Garosugil" resultType="info">
+		select * from dasam_deal_info where di_category='압구정·가로수' order by di_num desc
+	</select>
+	
+	<select id="Sinchon_EwhaUniv_Gongdeok" resultType="info">
+	select * from dasam_deal_info where di_category='신촌·이대·공덕' order by di_num desc 
+	</select>
+	
+	<select id="Jongno_Gwanghwamun" resultType="info">
+		select * from dasam_deal_info where di_category='종로·광화문' order by di_num desc
+	</select>
+	
+
+	<select id="songpa_Bangi_Garak" resultType="info">
+			select * from dasam_deal_info where di_category='송파·방이·가락' order by di_num desc
+	</select>
+	
+	<select id="Gangseo_Yangcheon" resultType="info">
+		select * from dasam_deal_info where di_category='강서·양천' order by di_num desc
+	</select>
+	
+	<select id="Nowon_Dobong" resultType="info">
+	select * from dasam_deal_info where di_category='노원·도봉' order by di_num desc
+	</select>
+	
+	<select id="Cheongdam_Hakdong_Nonhyeon" resultType="info">
+		select * from dasam_deal_info where di_category='청담·학동·논현' order by di_num desc
+	</select>
+	
+	<select id="Sangam_Eunpyeong" resultType="info">
+		select * from dasam_deal_info where di_category='상암·은평' order by di_num desc
+	</select>
+	
+	<select id="Itaewon_Hannam" resultType="info">
+		select * from dasam_deal_info where di_category='이태원·한남' order by di_num desc
+	</select>
+	
+	<select id="Gangdong_Cheonho_Gildong" resultType="info">
+		select * from dasam_deal_info where di_category='강동·천호·길동' order by di_num desc
+	</select>
+	
+	<select id="Gwanak_Dongjak_Sadang" resultType="info">
+		select * from dasam_deal_info where di_category='관악·동작·사당' order by di_num desc
+	</select>
+	
+	<select id="Seongdong_Dongdaemun" resultType="info">
+		select * from dasam_deal_info where di_category='성동·동대문' order by di_num desc
+	</select>
+	
+	<select id="Samseong_Yeoksam_Daechi" resultType="info">
+		select * from dasam_deal_info where di_category='삼성·역삼·대치' order by di_num desc
+	</select>
+	
+	<select id="Guro_Yeongdeungpo" resultType="info">
+		select * from dasam_deal_info where di_category='구로·영등포' order by di_num desc
+	</select>
+	
+	<select id="Konkuk_Guui_Jungnang" resultType="info">
+		select * from dasam_deal_info where di_category='건대·구의·중랑' order by di_num desc
+	</select>
+	
+
+  </mapper>
+  

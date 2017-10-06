@@ -1,0 +1,29 @@
+@CHARSET "UTF-8";
+
+.yeobSlide{
+	width: 480px;
+	overflow: hidden;
+	margin: 0 auto;
+	position: relative;
+}
+
+.yeobSlide ul{
+	width: 2400px;
+	list-style: none;
+	font-size: 0;
+}
+
+.yeobSlide ul li{
+	font-size:10px;
+	display: inline-block;
+}
+.yeobSlide button.prev{
+	position: absolute;
+	left: 0;
+	top: 200px;
+}
+.yeobSlide button.next{
+	position: absolute;
+	right: 0;
+	top: 200px;
+}

@@ -1,0 +1,32 @@
+/*  빽사장 css 파일 모듈	 */
+
+/******* 인코딩설정 및 폰트 설정 ******/
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+
+/*********************** 상단 메뉴 ***********************/
+/* 화면 크기지정 */
+#top_wrap{width:100%;position:relative;min-width:1260px;}
+#top_wrap .container{position:relative;min-width:1260px;}
+
+/* 상단 메뉴 Background */
+.bg_top {z-index:998;background:gray;opacity:0.35;filter:alpha(opacity=75);width:100%;height:75px;position:absolute;left:0px;top:0px;}
+
+#top_wrap .top_menu{position:absolute;left:0px;top:0px;}
+#top_wrap h1{position:absolute;left:-50px;top:0px;z-index:999;}
+
+#top_wrap .top_menu{width:1260px;margin:0px auto;z-index:999;}
+#top_wrap .gnb{position:absolute;left:275px;top:15px;height:17px;z-index:999;}
+#top_wrap .gnb li{position:relative;float:left;height:60px;padding-top:12px;margin-right:85px;color:#141414;font-size:16px;font-weight:700;}
+#top_wrap .gnb li a:hover{color:#c3141e;font-weight:700;}
+#top_wrap .gnb .link{display:inline-block;font-family:"210 다락방",sans-serif;font-weight:700;font-size:25px;color:#282828;}
+#top_wrap .gnb .link.on{color:#c3141e;}
+#top_wrap .gnb .sub_menu{display:none;position:absolute;left:-5px;top:60px;width:130px;overflow:hidden}
+#top_wrap .gnb .sub_menu.sub_bg2{left:-5px;}
+#top_wrap .gnb .sub_menu.sub_bg3{left:-28px;}
+#top_wrap .gnb .sub_menu.sub_bg4{left:-9px;}
+#top_wrap .gnb .sub_menu.sub_bg5{left:-35px;}
+#top_wrap .gnb .sub_menu.sub_bg6{left:-22px;}
+#top_wrap .gnb .sub_menu a{display:block;margin-top:2px;width:130px;height:30px;line-height:30px;font-family:"배달의민족 주아";font-size:15px;color:#ffffff;font-weight: 400;text-align:center;background:#282828;opacity:0.85;filter:alpha(opacity=85);}
+#top_wrap .gnb .sub_menu a:hover{color:#ffffff;text-align:center;background:#c3141e;opacity:0.85;filter:alpha(opacity=85);font-weight:700;}

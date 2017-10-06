@@ -1,0 +1,76 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+body {
+  margin: 0px;
+}
+nav {
+  margin-top: 30px;
+  padding: 20px;
+  text-align: center;
+  font-family: Raleway;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+#nav-1 {
+  background: #3fa46a;
+}
+.link-1 {
+  transition: 0.3s ease;
+  background: #3fa46a;
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none;
+  border-top: 4px solid #3fa46a;
+  border-bottom: 4px solid #3fa46a;
+  padding: 20px 0;
+  margin: 0 20px;
+}
+.pww{
+background-color: red;
+}
+.link-1:hover {
+  border-top: 4px solid #ffffff;
+  border-bottom: 4px solid #ffffff;
+  padding: 6px 0; 
+}
+.fff {
+background: #3fa46a;
+  color: black;
+  font-size: 30px;
+  text-decoration: none;
+  padding: 20px 0;
+  margin: 0 20px;
+}
+</style>
+</head>
+<body>
+
+<nav id="nav-1">
+  <a class="link-1" href="/aaa/mem/aa">구매내역</a>
+  <a class="link-1" href="/aaa/mem/bb">취소/환불/교환</a>
+     <a class="link-1" href="/aaa/mem/cc">적립금</a>
+  <a class="link-1" href="/aaa/mem/dd">장바구니</a>
+  <a class="link-1" href="/aaa/mem/ee">문의/답변</a>
+   <a class="fff">개인정보</a>
+</nav>
+<br><br><br><br>
+<form>
+아이디 <%-- id 가져온값 --%>&nbsp;아이디 값!!<br><br>
+
+비밀번호 <input type="password" name="pw" class="pww"><br><br>
+
+<input type="submit" value="수정페이지로">
+</form><br><br><br><br>
+
+<%--넘어온이름 => --%> <h2><font color="orange">**</font>님의 개인정보 보호를 위해서 <font color="red">비밀번호 , 자동입력 방지문자</font>를 입력해주세요.</h2>
+<h2>회원님의 비밀번호가 타인에게 노출되지 않도록 주의해 주세요.</h2>
+</body>
+</html>
+

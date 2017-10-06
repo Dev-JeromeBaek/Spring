@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!-- 1. JDBC******************* -->
+	<!-- 1-1. DriverManagerDataSource 이용 
+	- pom.xml에서 spring-jdbc 필요
+	- 스프링에서 제공되는 테스트용 객체를 이용한 방법
+		불안정하기 떄문에 서비스용 서버에서는 상용화된
+		커넥션풀을 이용해야 함
+	 
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+		<property name="url" value="jdbc:oracle:thin:@192.168.121.1:1521:xe"></property>
+		<property name="username" value="aabb"></property>
+		<property name="password" value="aabb"></property>
+	</bean>
+	-->
+	
+	<!-- 
+		1-2. JDBC DBCP
+	- pom.xml : commons dbcp 추가
+	-->
+	<!-- BasicDataSource -->
+	
+	<context:property-placeholder
+		location="classpath:/context-config/jdbc.properties"
+	/>
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="${jdbc.driverClassName}"></property>
+		<property name="url" value="${jdbc.url}"></property>
+		<property name="username" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+		<property name="defaultAutoCommit" value="false"></property>
+	</bean>
+	 
+	<!-- 2. Bean -->
+	<bean id="controller" class="mvc.controller.PeopleController"
+			p:service-ref="service"></bean>	<!-- -ref Bean이니까 얘로 쓴다 레퍼런스 -->
+	<bean id="service" class="mvc.service.PeopleService"
+			p:dao-ref="dao"
+			p:dataSource-ref="dataSource"></bean>
+	<bean id="dao" class="mvc.dao.PeopleDAO"></bean>
+	
+	
+</beans>

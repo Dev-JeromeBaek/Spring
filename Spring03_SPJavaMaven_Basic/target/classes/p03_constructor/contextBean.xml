@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="m01" class="p03_constructor.Milk">
+		<constructor-arg name="name" value="검은콩우유"/>
+		<constructor-arg name="price" value="1300"/>
+	</bean>
+	
+	<bean id="m02" class="p03_constructor.Milk">
+		<constructor-arg index="0" value="딸기우유"/>
+		<constructor-arg index="1" value="300"/>
+	</bean>
+	
+	<bean id="m03" class="p03_constructor.Milk">
+		<constructor-arg value="바나나우유"/>
+		<constructor-arg value="400"/>
+	</bean>
+	
+	<bean id="m04" class="p03_constructor.Milk"
+		c:name="민트초코우유" c:price="500"/>
+		
+	<!-- 메인에서 빈 확보 후 출력하기 -->
+
+</beans>

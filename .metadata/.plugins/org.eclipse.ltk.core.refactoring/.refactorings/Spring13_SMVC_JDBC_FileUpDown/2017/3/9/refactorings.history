@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;User Library&apos; to &apos;aaa&apos;&#x0D;&#x0A;- Original project: &apos;Spring13_SMVC_JDBC_FileUpDown&apos;&#x0D;&#x0A;- Destination element: &apos;aaa&apos;&#x0D;&#x0A;- Original element: &apos;User Library&apos;" description="Copy folder" destination="=aaa" element1="User Library" files="0" flags="589830" folders="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1488452118299" units="0" version="1.0"/>
+</session>

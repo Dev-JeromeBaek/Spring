@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+	
+	
+	<!-- 
+		<context:component-scan base-package="controller"></context:component-scan>
+		<context:component-scan base-package="model"></context:component-scan>
+		
+		위와 같이 두 개를 함께 명시해도 무방하나,
+		일반적으로 web로직(url을통한 mapping)과 비지니스 로직(연산작용, 등등..)을 구분한다.
+		web로직 : controller
+		비지니스로직 : model
+		
+		web로직은 (이름-servlet.xml)에서 web로직을 명시하고,
+			비지니스 로직(model)은 root-context.xml에서 명시한다.
+		이유 : 양이 많아지면 가독성이 떨어짐;
+	
+	-->
+	<!-- 얘는 web로직 -->
+	<context:component-scan base-package="controller"></context:component-scan>
+	
+</beans>

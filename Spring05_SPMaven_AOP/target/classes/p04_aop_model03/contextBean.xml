@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	
+	<bean id="div" class="p04_aop_model03.J03_DivCla"></bean>
+	<bean id="mod" class="p04_aop_model03.J03_ModCla"></bean>
+	
+	<bean id="adviceBean" class="p04_aop_model03.J04_AdviceCla"></bean>
+	
+	<aop:config>
+		<aop:aspect id="aspectBean" ref="adviceBean">
+			<aop:pointcut expression="execution(public * *(..))" id="pointCutMethod"/>
+			<aop:before method="advBefore" 
+					pointcut-ref="pointCutMethod"/>
+			<aop:after-throwing method="advArterThrowing" 
+					pointcut-ref="pointCutMethod" 
+					throwing="e"/>	<!-- 프레임워크에게 가지고있는 exception 정보를 e 라는 이름으로 보내라. -->
+			<aop:after method="advAfter" pointcut-ref="pointCutMethod"/>
+			<aop:after-returning method="adbAfterReturning" 
+					pointcut-ref="pointCutMethod"
+					returning="ret"/>
+			
+		</aop:aspect>
+	</aop:config>
+	
+
+</beans>

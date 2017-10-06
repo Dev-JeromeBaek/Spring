@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="key" class="p04_referenceBean.KeyBoard"
+			p:name="삼성" p:price="200"/>
+	
+	<bean id="monitor" class="p04_referenceBean.Monitor"
+			p:name="LG" p:price="300"/>
+			
+	<bean id="mouse" class="p04_referenceBean.Mouse"
+			p:name="애플" p:price="400"/>
+			
+	<bean id="com01" class="p04_referenceBean.Computer"
+			p:kb-ref="key" p:mn-ref="monitor" p:ms-ref="mouse"/>
+	
+	<bean id="com02" class="p04_referenceBean.Computer"
+			c:kb-ref="key" c:mn-ref="monitor" c:ms-ref="mouse"/>
+
+</beans>

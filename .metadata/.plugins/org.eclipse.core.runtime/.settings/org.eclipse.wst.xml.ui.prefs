@@ -1,0 +1,12 @@
+cdataBorder=\#A7EC21 | null | true | false | false | false
+commentBorder=\#ffff00 | null | true | true | false | true
+commentText=\#ff8080 | null | false | false | false | false
+declBoder=\#D0D0D0 | null | null | null | null | null
+eclipse.preferences.version=1
+newFileTemplateName=xml declaration
+org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart.lastActivePage=1
+piBorder=\#0394be | null | true | false | false | false
+tagBorder=\#0080ff | null | true | false | false | false
+tagName=\#03a8d8 | null | false | false | false | false
+xml_content_assist_default_page_sort_order=org.eclipse.wst.xml.ui.proposalCategory.xmlTags\u0000org.eclipse.wst.xml.ui.proposalCategory.xmlTemplates\u0000
+xml_content_assist_own_page_sort_order=org.eclipse.wst.xml.ui.proposalCategory.xmlTemplates\u0000org.eclipse.wst.xml.ui.proposalCategory.xmlTags\u0000

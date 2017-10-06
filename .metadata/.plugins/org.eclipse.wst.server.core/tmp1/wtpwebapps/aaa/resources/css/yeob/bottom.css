@@ -1,0 +1,111 @@
+[genuitec-file-id="wc1-144"],[genuitec-lp-path="/aaa/src/main/webapp/resources/css/yeob/bottom.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+@CHARSET "UTF-8";
+
+/* footer - layout */
+#footer{clear:both;width:100%;padding-bottom:34px;background:#fff}
+#footer .fnb{width:990px;height:39px;margin:0 auto;border-top:2px solid #555;border-bottom:1px solid #c1c1c1}
+#footer .fnb ul{width:603px;height:100%;background:url( http://img2.tmon.kr/static/img/sp_footer.png?v=1488175333 ) no-repeat 0 -100px}
+#footer .fnb li{float:left;height:39px}
+#footer .fnb li a{display:block;width:100%;height:100%;text-indent:-9999px}
+#footer .fnb li.fnb1{width:64px}
+#footer .fnb li.fnb2{width:85px}
+#footer .fnb li.fnb3{width:62px}
+#footer .fnb li.fnb4{width:60px}
+#footer .fnb li.fnb5{width:103px}
+#footer .fnb li.fnb6{width:94px}
+#footer .fnb li.fnb7{width:135px}
+#footer .footer_corp{overflow:hidden;position:relative;width:990px;margin:0 auto;padding:16px 0;border-bottom:1px solid #ced1d5}
+#footer .footer_corp .corp_logo{position:absolute;top:19px;left:5px;width:177px;height:15px;background:url( http://img2.tmon.kr/static/img/sp_footer.png?v=1488175333 ) no-repeat;text-indent:-9999px}
+#footer address{float:left;padding-left:196px;font-size:11px;line-height:18px;color:#707582;letter-spacing:-1px}
+#footer address a{padding:0 6px 0 3px;background:url( http://img1.tmon.kr/static/img/sp_bu.png?v=1488175333 ) no-repeat 100% -637px;color:#747883;text-decoration:underline}
+#footer address em{font-family:verdana;font-size:10px;color:#848995;letter-spacing:0}
+#footer address span{letter-spacing:0}
+
+/* 기존 푸터 */
+#footer .awarded_area{overflow:hidden;clear:both;width:990px;height:29px;margin:11px auto 0;background:url( http://img2.tmon.kr/static/img/sp_footer.png?v=2&v=1488175333 ) no-repeat 0 -235px}
+#footer .awarded_area a{display:block;float:left;width:141px;height:31px;text-indent:-9999px}
+/* footer 한국온라인쇼핑협회, PIMS, BS10012 인증서 추가 버전 */
+#footer .award_area{position:relative;overflow:hidden;clear:both;width:990px;height:73px;margin:11px auto 0;background:url( http://img2.tmon.kr/static/img/sp_footer.png?v=224&v=1488175333 ) no-repeat 0 -235px}
+#footer .award_area a{position:absolute;display:block;width:141px;height:31px;text-indent:-9999px}
+#footer .award_area .award1{left:0;top:0;}
+#footer .award_area .award2{left:170px;top:0;}
+#footer .award_area .award3{left:330px;top:0;}
+#footer .award_area .award4{left:500px;top:0;}
+#footer .award_area .award5{left:660px;top:0;}
+#footer .award_area .award6{left:825px;top:0;}
+#footer .award_area .award_pims{left:0px;top:43px;}
+#footer .award_area .award_bs{width:150px;left:165px;top:43px;}
+#footer .award_area .award_kolsa{left:330px;top:43px;}
+
+.btn_gombl{width:95%;height:142px;margin:18px 2% 0;border:1px solid #f0f4f5;outline:1px solid #82a8b8;background:#f3f6f6 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#e9edf0));color:#222;font-size:5em}
+
+/* 홈 푸터 메뉴 */
+.home_footer_menu{overflow:hidden;height:103px;margin:30px 0 -55px;border:1px solid #dcdcdc;background:url( https://img.tmon.co.kr/static/img/bg_center_banner5.png?v=1463967980&v=1488175333 ) no-repeat}
+.home_footer_menu li{float:left;width:247px;height:103px;font-size:0;line-height:0}
+.home_footer_menu li.center{width:494px}
+.home_footer_menu li a{display:block;width:100%;height:100%;text-indent:-9999px}
+
+/* simple layout */
+.airline_history{background:#f0f0f0}
+#wrap_slayout .inner_wrap{width:990px;margin:0 auto}
+#wrap_slayout .inner_wrap:after{display:block;clear:both;content:''}
+
+#s_header{height:42px;border-bottom:1px solid #dcdcdc;background:#fff}
+#s_header .main_slogo{float:left;margin-top:11px}
+#s_header .main_slogo a{display:block;width:69px;height:19px;background:url( http://img1.tmon.kr/static/img/sp_simple_layout.png?v=1411550141&v=1488175333 ) no-repeat;text-indent:-9999px}
+#s_header .s_global{float:right;margin-top:7px;*margin-top:6px}
+#s_header .s_global a{font-size:11px;color:#545454;letter-spacing:-1px}
+#s_header .s_global a:hover{text-decoration:underline}
+
+#s_header .s_global .level{display:inline-block;font-family:tahoma;font-weight:bold;color:#76c50c;letter-spacing:0}
+#s_header .s_global .level.frst{color:#701f33}
+#s_header .s_global .level.vvip{color:#282828}
+#s_header .s_global .level.vip{color:#731dd5}
+#s_header .s_global .level.gold{color:#fe9519}
+#s_header .s_global .level.silver{color:#858a99}
+
+#s_header .s_global .user{display:inline-block;margin:0 3px;font-weight:bold}
+#s_header .s_global .login,
+#s_header .s_global .logout{display:inline-block;height:15px;margin-top:6px;padding:0 5px 0 4px;border:1px solid #ccc;line-height:15px;*line-height:16px}
+:root #s_header .s_global .login,
+:root #s_header .s_global .logout{line-height:16px \0/IE9}
+#s_header .s_global .login:hover,
+#s_header .s_global .logout:hover{text-decoration:none}
+#s_header .s_global ul{display:inline-block;*display:inline;margin-left:7px;zoom:1}
+#s_header .s_global li{display:inline-block;*display:inline;*padding-left:3px;zoom:1}
+#s_header .s_global li .bar{display:inline-block;padding:0 6px 0 2px;font-size:11px;color:#ddd}
+
+.airline_history #s_content{padding:50px 0;background:#f0f0f0}
+#s_content .airline_area{width:850px;margin:0 auto}
+#s_content .h_area{position:relative;height:52px;border-bottom:2px solid #383d4a}
+#s_content .h_area .h_airline_history{width:205px;height:31px;background:url( http://img1.tmon.kr/static/img/sp_simple_layout.png?v=1411550141&v=1488175333 ) no-repeat -170px 0;text-indent:-9999px}
+#s_content .h_area .tab{position:absolute;top:15px;right:0;*zoom:1}
+#s_content .h_area .tab:after{display:block;clear:both;content:''}
+#s_content .h_area .tab li{float:left;margin-left:-1px}
+#s_content .h_area .tab li a{display:block;width:108px;height:36px;border:1px solid #d8d8d8;border-bottom:0;background-color:#fff;line-height:37px;color:#2d3a41;letter-spacing:-1px;text-align:center}
+#s_content .h_area .tab li.selected a{position:relative;border-color:#363942;background-color:#363942;font-weight:bold;color:#fff}
+#s_content .caution_area{height:34px;margin-bottom:10px;border-bottom:1px solid #dcdcdc;background-color:#e6e8ee;text-align:center;font-size:11px;line-height:34px;color:#2d3a41}
+#s_content .airline_area .caution_area{margin-bottom:0;border-bottom:0}
+#s_content .caution_area .bar{padding:0 3px;color:#b2b2b2}
+
+#s_footer{background:#fff}
+#s_footer.gray_sfooter{background:#f0f0f0}
+#s_footer .corp_info{overflow:hidden;width:990px;margin:0 auto;border-top:2px solid #777;border-bottom:1px solid #f4f4f4;*zoom:1}
+#s_footer.gray_sfooter .corp_info{border-bottom-color:#dbdbdb}
+#s_footer .corp_info .inner{float:left;width:50%;height:124px;font-size:11px;letter-spacing:-1px}
+#s_footer .corp_info .inner .corp{display:block;margin:18px 0 11px;color:#666}
+#s_footer .corp_info .inner .info{line-height:17px;color:#999}
+#s_footer .corp_info .inner .info a.cinfo{display:inline-block;overflow:hidden;width:90px;height:16px;margin-left:5px;background:url( http://img1.tmon.kr/static/img/sp_simple_layout.png?v=1411550141&v=1488175333 ) no-repeat -75px 0;line-height:900px;vertical-align:middle}
+#s_footer .corp_info .inner .info em{font-weight:bold}
+#s_footer .corp_info .inner .info .link_lst{overflow:hidden;margin-top:3px}
+#s_footer .corp_info .inner .info .link_lst li{float:left;margin-right:12px}
+#s_footer .corp_info .inner .info .link_lst li a{font-weight:bold;font-size:11px;color:#999;text-decoration:underline}
+#s_footer .corp_info .inner .corp span,#s_footer .corp_info .inner .info em span{letter-spacing:0}
+#s_footer .corp_info .inner .bar{padding:0 4px 0 3px;color:#e8e8e8}
+#s_footer .copyright{padding:30px 0 50px;text-align:center;font-size:11px}
+#s_footer .copyright .caution{color:#555;letter-spacing:-1px}
+#s_footer .copyright .copy{margin-top:8px;font-family:tahoma;color:#999}
+#s_footer .copyright .copy em{color:#555}

@@ -1,0 +1,5 @@
+package exmybatis.mvc.exmybatix03.repository;
+
+public class PeopleRepository {
+
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="BigMac" class="p02_setter.Food">
+<!-- 	property로 값을 저장해놓으면 빈이 생성되는 순간 값이 들어가있다.-->
+		<property name="name" value="빅맥"></property>
+		<property name="price" value="5500"></property>
+	</bean>
+	
+	<bean id="1955" class="p02_setter.Food" p:name="1955버거" p:price="6000"/>
+
+<!-- 	위의 두 빈을 getBean 한 후, 모든 정보 출력하세요 -->
+
+</beans>

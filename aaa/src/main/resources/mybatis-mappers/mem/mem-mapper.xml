@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="memMapper">
+  
+  	<!-- [selectOne] -->
+  	<select id="selectOne" resultType="mem">
+  		select * from dasam_mem where num=#{num}
+  	</select>
+  	
+  	<!-- [registration] -->
+  	<insert id="registration" parameterType="mem">
+		insert into dasam_mem values(dasam_mem_seq.nextval, #{m_id}, #{m_pw}, #{m_name}, #{m_addr}, #{m_phone}, #{m_gender}, 'x', '', 6, 0, 0, sysdate)
+	</insert>
+	
+	<!-- [insertOne] -->
+	<insert id="insertOne" parameterType="mem">
+		insert into dasam_mem(m_num, m_id, m_pw, m_name, m_addr, m_phone, m_gender, m_ox, m_memo, m_grade, m_point, m_logcount, m_date) values(dasam_mem_seq.nextval, #{m_id}, #{m_pw}, #{m_name}, #{m_addr}, #{m_phone}, #{m_gender}, 'x', '', 5, 0, 0, sysdate)
+	</insert>
+	
+	<!-- [selectMem] -->
+  	<select id="selectMem" parameterType="java.lang.String" resultType="mem">
+  		select * from dasam_mem where m_id=#{m_id}
+  	</select>
+  	
+  	<!-- 구매할때 가게정보 -->	
+  	<select id="showInfo" parameterType="info" resultType="info">
+  		select * from dasam_deal_info where di_num=#{num}
+  	</select>
+  	
+  	<!--  구매할때 회원정보 -->
+  	<select id="showMember" parameterType="Integer" resultType="mem">
+  	select * from dasam_mem where m_num=#{mnum}
+  	</select>
+  	
+  <update id="updatememPoint" parameterType="mem">
+  	update dasam_mem set m_point=#{m_point} where m_num=#{m_num}
+  </update>
+  	
+  	<select id="AllBuySelect" parameterType="mem" resultType="buy">
+  	SELECT B_DI_NAME,B_PRICE,B_DATE,b_status from dasam_buy INNER JOIN dasam_mem ON dasam_buy.B_M_NUM = dasam_mem.m_num where m_num=#{m_num}
+  </select>
+  
+  
+  
+  
+  
+  
+  	<!-- [updateOxCount] -->
+  	<update id="updateOxCount" parameterType="mem">
+  		update dasam_mem set m_ox=#{m_ox}, m_logcount=#{m_logcount} where m_num=#{m_num}
+  	</update>
+  
+  	<!-- [updateGrade] -->
+  	<update id="updateGrade" parameterType="mem">
+  		update dasam_mem set m_grade=#{m_grade} where m_num=#{m_num}
+  	</update>
+  	
+  	<!-- [showMemList] -->
+  	<select id="showMemList" resultType="mem"> 
+  		select * from dasam_mem order by m_num desc
+  	</select>
+  	
+  	<!-- [nowMemOxCount] -->
+  	<select id="nowMemOxCount" parameterType="java.lang.String" resultType="mem">
+  		select * from dasam_mem where m_ox=#{contact}
+  	</select>
+  	
+  	<!-- [logOut] -->
+  	<update id="logOut" parameterType="mem">
+  		update dasam_mem set m_ox=#{m_ox} where m_num=#{m_num}
+  	</update>
+  	
+  	<!-- [idCheck01] -->
+  	<select id="idCheck01" resultType="mem">
+  		select * from dasam_mem
+  	</select>
+  	<!-- [id_Find] -->
+  	<select id="id_Find" resultType="mem">
+  		select * from dasam_mem
+  	</select>
+  	<!-- [pw_Find] -->
+  	<select id="pw_Find" resultType="mem">
+  		select * from dasam_mem
+  	</select>
+  	<!-- [FindID] -->
+  	<select id="FindID" resultType="mem">
+  		select * from dasam_mem
+  	</select>
+  	<!-- [FindPW] -->
+  	<select id="FindPW" resultType="mem">
+  		select * from dasam_mem
+  	</select>
+  	
+  	<!-- 	================================================================= -->
+<!-- 	[개인정보 수정 (신정훈)] -->
+
+
+	<update id="updatePerMember" parameterType="mem">
+		update dasam_mem set m_name=#{m_name}, m_pw=#{m_pw}, m_addr=#{m_addr}, m_gender=#{m_gender}
+					, m_phone=#{m_phone} where m_num=#{m_num}
+	</update>
+  	
+<!-- 	================================================================= -->
+<!-- 	[전화 (신정훈)] -->
+  	
+  	<select id="getMemo" parameterType="java.lang.Integer" resultType="mem">
+  		select * from dasam_mem where m_num=#{m_num}
+  	</select>
+  	
+  	<update id="insertMemo" parameterType="mem">
+  		update dasam_mem set m_memo=#{m_memo} where m_num=#{m_num}
+  	</update>
+  	
+  	<select id="getCheckMemMemo" parameterType="mem" resultType="mem">
+  		 select * from dasam_mem where m_num=#{m_num}
+  	</select>
+  	
+  	<update id="delMemo" parameterType="mem">
+  	 	update dasam_mem set  m_memo=#{m_memo} where m_num=#{m_num}
+  	</update>
+  	
+  </mapper>
+  

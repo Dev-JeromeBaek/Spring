@@ -1,0 +1,13 @@
+package exmybatis.mvc.exmybatix03;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import exmybatis.mvc.exmybatix03.repository.PeopleRepository;
+
+@Controller
+public class PeopleController {
+	
+	@Autowired
+	private PeopleRepository repository;
+}

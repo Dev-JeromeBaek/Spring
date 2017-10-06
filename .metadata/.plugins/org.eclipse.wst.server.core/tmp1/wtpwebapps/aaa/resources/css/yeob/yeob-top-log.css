@@ -1,0 +1,43 @@
+[genuitec-file-id="wc1-149"],[genuitec-lp-path="/aaa/src/main/webapp/resources/css/yeob/yeob-top-log.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+@CHARSET "UTF-8";
+
+.gnb_area .icon, .icon, #header .btn_search, #header .banner .btn_prev, #header .banner .btn_next, #gnb .wp-gnb > li .ic_mart, #gnb .wp-gnb > li:hover .a .arrow_up, #gnb .wp-gnb > li:focus .a .arrow_up, #gnb .wp-gnb > li .a:focus .a .arrow_up, #gnb .sub a i, #gnb .sub .arrow_up, #gnb .wp-gnb .n_mart:hover .a .arrow_up, #gnb .wp-gnb .n_mart .sub a i { display: inline-block; overflow: hidden; }
+
+.gnb_area { position: relative; height: 28px; z-index: 1200; border-bottom: 1px solid #f4f4f4; font-family: 'Nanum Gothic'; }
+.gnb_area a { color: #545454; }
+.gnb_area .global { float: right; height: 28px; font-size: 11px; line-height: 28px; letter-spacing: -1px; z-index: 500; }
+:root .gnb_area .global { line-height: 30px; }
+.gnb_area .global [class^="login_"] { float: left; height: 28px; }
+.gnb_area .global [class^="login_"] a { float: left; height: 28px; padding-right: 6px; }
+.gnb_area .global a.join { padding: 0 0 0 8px; }
+.gnb_area .global a.join .bar { padding-left: 6px; }
+.gnb_area .global .level { margin-top: 2px; position: relative; padding-left: 6px; font-family: tahoma; font-weight: bold; line-height: 25px; color: #78cb09; letter-spacing: 0; text-decoration: underline; }
+/* .gnb_area .global .level1.vvip { color: #151a26;  font-size: 15px;} */
+.gnb_area .global .level1/*.vvip*/ { color: #69042d; font-size: 16px; font-weight: bold;} 
+.gnb_area .global .level2/*.vip*/ { color: #7034d7;  font-size: 16px; font-weight: bold;}
+.gnb_area .global .level3/*.gold*/ { color: #fea917;  font-size: 16px; font-weight: bold;}
+.gnb_area .global .level4/*.silver*/ { color: #858a99;  font-size: 16px; font-weight: bold;}
+.gnb_area .global .level5/*.orange*/ { color: #f84515;  font-size: 16px; font-weight: bold;}
+.gnb_area .global .level6/*.new*/ { color: #78cb09;  font-size: 16px; font-weight: bold;}
+.gnb_area .global .user { padding: 0 7px 0 2px; font-weight: bold; }
+.gnb_area .global .login, .gnb_area .global .logout { position: relative; z-index: 10; height: 15px !important; margin-top: 6px; padding: 0 5px 0 6px; border: 1px solid #ccc; background: #fff; line-height: 15px; }
+:root .gnb_area .global .login, :root .gnb_area .global .logout { line-height: 16px \0/IE9; }
+.gnb_area .global .bar { width: 1px; color: #ddd; }
+@media screen and (-webkit-min-device-pixel-ratio: 0) { .gnb_area .global .arr { vertical-align: 2px; } }
+.gnb_area .global .num_area { display: inline-block; position: relative; top: -1px; height: 14px; margin: 0 -7px 0 2px; padding-left: 0px; font-weight: bold; font-family: tahoma; line-height: 14px; *line-height: 13px; color: #969696; text-align: center; vertical-align: middle; letter-spacing: 0; cursor: pointer; }
+.gnb_area .global .num_area span { display: inline-block; width: 7px; height: 14px; vertical-align: top; }
+.gnb_area .global .num_area i { display: inline-block; position: relative; height: 14px; margin-right: -3px; vertical-align: top; }
+.gnb_area .global .num { padding-left: 2px; font-weight: bold; font-family: tahoma; font-size: 10px; line-height: 12px; color: #ff4a2d; letter-spacing: 0; }
+.gnb_area .global ul { float: left;}
+.gnb_area .global ul li { float: left; position: relative; }
+.gnb_area .global ul li a { display: inline-block; height: 28px; padding: 0 7px; }
+.gnb_area .global ul li:hover > ul { display: block; }
+.gnb_area .global ul ul { display: none; position: absolute; top: 28px; left: -1px; padding: 7px 0; border: 1px solid #49505d; background: #fff; white-space: nowrap; }
+.gnb_area .global ul ul li { clear: both; width: 100%; height: 19px; }
+.gnb_area .global ul ul li a { display: block; height: 19px; padding: 0 12px 0 9px; line-height: 20px; }
+.gnb_area .global ul ul li a:hover { background: #606674; *background: none; color: #fff; *color: #545454; }
+.gnb_area .global ul ul li a:hover i { *text-decoration: underline; }
+.gnb_area .global ul ul li a:hover .num { color: #fff; *color: #ff4a2d; }

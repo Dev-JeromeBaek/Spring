@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;list&apos; from expression &apos;new List()&apos;&#x0D;&#x0A;- Original project: &apos;ex01&apos;&#x0D;&#x0A;- Variable name: &apos;list&apos;&#x0D;&#x0A;- Destination method: &apos;mvc.dao.PeopleDAO.searchList().new RowMapper() {...}.mapRow()&apos;&#x0D;&#x0A;- Variable expression: &apos;new List()&apos;" description="Extract local variable &apos;list&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;mvc.dao{PeopleDAO.java" name="list" replace="false" selection="1721 0" stamp="1487616076117" version="1.0"/>
+</session>

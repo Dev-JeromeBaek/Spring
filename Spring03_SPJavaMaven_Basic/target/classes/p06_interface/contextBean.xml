@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 
+		인터페이스로는 빈을 생성할 수 없다.
+		<bean id="test" class="p06_interface.MyInterface"/>
+	 -->
+	 <bean id="implBean" class="p06_interface.ImplCla"/>
+	 
+</beans>

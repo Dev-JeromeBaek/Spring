@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="peoBean" class="p01_makeBean.People"/>
+	
+<!-- 	[.getBean() 명령하면 같은 객체를 사용하게 됨.] -->
+	<bean id="singleBean" class="p01_makeBean.People" scope="singleton"/>
+	
+<!-- 	[.getBean() 명령할 때 마다 새로운 객체를 준다.] -->
+	<bean id="protoBean" class="p01_makeBean.People" scope="prototype"/>
+	
+	<bean id="stuBean" class="p01_makeBean.J03_Student"/>
+
+</beans>

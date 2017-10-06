@@ -1,0 +1,5 @@
+package hwex.mvc.hotel.repository;
+
+public class HotelRepositoy {
+
+}

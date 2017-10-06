@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;Spring14_SMVC_MyBatis_SimpleConn&apos;&#x0D;&#x0A;- Original project: &apos;Spring14_SMVC_MyBatis_SimpleConn&apos;&#x0D;&#x0A;- Original element: &apos;spring.mvc.spring14.bean.PageDTO.java&apos;" description="Delete element" element1="/src\/main\/java&lt;spring.mvc.spring14.bean{PageDTO.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1488417162911" subPackages="false" version="1.0"/>
+</session>

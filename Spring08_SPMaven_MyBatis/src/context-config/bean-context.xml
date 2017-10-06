@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<context:component-scan base-package="mvc"></context:component-scan>
+	
+	<context:property-placeholder
+		location="classpath:/context-config/jdbc.properties"
+	/>
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="${jdbc.driverClassName}"></property>
+		<property name="url" value="${jdbc.url}"></property>
+		<property name="username" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+		<property name="defaultAutoCommit" value="false"></property>
+	</bean>
+	
+	<!-- 
+		MyBatis 설정
+			1. maven 설정 : mybatis / mybatis-spring
+			2. dataSource 빈 생성
+			3. 설정 관련 빈 생성(mybatis-config.xml내용)
+			4. 사용할 sqlSessionTemplate 빈 생성
+	-->
+	
+	<!-- sqlSessionFactoryBean 
+			: myBatis.config.xml을 통해 설정할 내용들을 아래 Bean을 통해 설정 -->
+			
+	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<!-- typeAliasesPackage : Aliases가 지정된 파일의 패키지값을 값으로 넣어준다. -->
+		<property name="typeAliasesPackage" value="mvc.bean"></property>
+		<!-- configLocation : mybatis를 설정하는 xml파일을 지정한다! -->
+		<!-- classpath:/ => src/ 와 같음 -->
+		<property name="configLocation" value="classpath:/context-config/mybatis-config.xml"></property>
+		<!-- mapperLocations : mapper가 여러개일 수 있다고 가정하고 명시하는 property -->
+		<property name="mapperLocations">
+			<array>
+				<value>classpath:/mybatis-mappers/people-mapper.xml</value>
+			</array>
+		</property>
+	</bean>
+	
+	<bean id="sqlSessionTemlplate" class="org.mybatis.spring.SqlSessionTemplate"
+			destroy-method="clearCache">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactoryBean"></constructor-arg>
+	</bean>
+	
+	<bean id="tx" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	
+</beans>

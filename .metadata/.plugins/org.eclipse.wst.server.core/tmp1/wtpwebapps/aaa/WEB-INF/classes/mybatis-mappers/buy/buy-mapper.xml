@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="buyMapper">
+  
+  	<select id="salesTopCorp" resultType="mapper">
+  		select cc.c_num inte1,cc.c_name str1,cc.c_ceo str2,dd.cou inte2 from dasam_corp cc,
+  		(select b_c_num,COUNT(*) cou from dasam_buy where b_status='YES' group by b_c_num) dd 
+  		where cc.c_num=dd.b_c_num order by inte2 desc
+  	</select>
+  	
+  	<select id="topDealCorp" resultType="mapper">
+  		select cc.c_num inte1,cc.c_name str1,cc.c_ceo str2,dd.cou inte2 from dasam_corp cc,
+  		(select di_c_num,COUNT(*) cou from dasam_deal_info where di_approve='YES' group by di_c_num) dd
+  		where cc.c_num=dd.di_c_num order by inte2 desc
+  	</select>
+  
+  	<select id="topCancelCorp" resultType="mapper">
+  		select cc.c_num inte1,cc.c_name str1,cc.c_ceo str2,dd.cou inte2 from dasam_corp cc,
+  		(select di_c_num,COUNT(*) cou from dasam_deal_info where di_approve='NO' group by di_c_num) dd
+  		where cc.c_num=dd.di_c_num order by inte2 desc
+  	</select>
+  	
+  	<select id="selectMySalesList" parameterType="java.lang.Integer" resultType="buy">
+  		select * from dasam_buy where b_c_num=#{c_num} order by b_date desc
+  	</select>
+  	
+  	<select id="selectBuyListStatus" parameterType="mapper" resultType="buy">
+  		select * from dasam_buy where b_status=#{str1} and b_c_num=#{inte1} order by b_date desc
+  	</select>
+  	
+  	<select id="finalStatus" resultType="java.util.Date">
+  		select sysdate from dual
+  	</select>
+  	
+  	<update id="chooseStatus" parameterType="mapper">
+  		update dasam_buy set b_status=#{str1}, b_final_date=sysdate where b_num=#{inte1}
+  	</update>
+  	
+  	<select id="buyAllList" resultType="buy">
+  		select * from dasam_buy order by b_date desc
+  	</select>
+  	
+  	<select id="buyDetailList" parameterType="java.lang.Integer" resultType="buyDetail">
+  		select * from dasam_buy_detail where bd_b_num=#{b_num}
+  	</select>
+  	
+  	
+  	<!-- =================================================== -->
+  	<!-- 03.21 수인 -->
+   <insert id="insertBuyInfo" parameterType="buy">
+		insert into dasam_buy (b_num,b_m_num,b_c_num,b_di_num,b_di_name,b_price,b_discount,b_status,b_date)
+		values(dasam_buy_seq.nextval,#{b_m_num},#{b_c_num},#{b_di_num},#{b_di_name},#{b_price},#{b_discount},#{b_status},sysdate)
+	</insert>
+
+	<insert id="insertBuyDetail" parameterType="buydetail">
+		insert into dasam_buy_detail
+		values(dasam_buy_detail_seq.nextval,dasam_buy_seq.currval,#{bd_dd_num},#{bd_dd_name},#{bd_dd_price},#{bd_dd_amount})
+	</insert>
+
+
+	<select id="selectTicket" parameterType="mem" resultType="buy">
+		select distinct aa.* from dasam_buy aa,(select d.* from
+		dasam_deal_info d,(select * from dasam_buy where b_m_num=#{m_num})
+		 di where (d.di_category='강남' or d.di_category='홍대·합정·상수' 
+		or d.di_category='명동·시청·중구' or d.di_category='잠실·신천' 
+		or d.di_category='서초·방배·양재' or d.di_category='대학로·수유' 
+		or d.di_category='압구정·가로수' or d.di_category='신촌·이대·공덕'
+		or d.di_category='종로·광화문' or d.di_category='송파·방이·가락'
+		or d.di_category='강서·양천' or d.di_category='노원·도봉'
+		or d.di_category='청담·학동·논현' or d.di_category='상암·은평'
+		or d.di_category='이태원·한남' or d.di_category='강동·천호·길동'
+		or d.di_category='관악·동작·사당' or d.di_category='성동·동대문'
+		or d.di_category='삼성·역삼·대치' or d.di_category='구로·영등포'
+		or d.di_category='건대·구의·중랑') and di.b_di_num=d.di_num ) 
+		bb where aa.b_di_num=bb.di_num and (B_STATUS='NO' or B_STATUS='YES' or B_STATUS='ING' or B_STATUS='WAIT')
+		order by b_date desc
+	</select>
+	
+	<select id="selectNoticket" parameterType="mem" resultType="buy">
+		select distinct aa.* from dasam_buy aa,(select d.* from
+		dasam_deal_info d,(select * from dasam_buy where b_m_num=#{m_num})
+		 di where (d.di_category !='강남' and d.di_category != '홍대·합정·상수' 
+		and d.di_category != '명동·시청·중구' and d.di_category != '잠실·신천' 
+		and d.di_category != '서초·방배·양재' and d.di_category != '대학로·수유' 
+		and d.di_category != '압구정·가로수' and d.di_category != '신촌·이대·공덕'
+		and d.di_category != '종로·광화문' and d.di_category != '송파·방이·가락'
+		and d.di_category != '강서·양천' and d.di_category != '노원·도봉'
+		and d.di_category != '청담·학동·논현' and d.di_category != '상암·은평'
+		and d.di_category != '이태원·한남' and d.di_category != '강동·천호·길동'
+		and d.di_category != '관악·동작·사당' and d.di_category != '성동·동대문'
+		and d.di_category != '삼성·역삼·대치' and d.di_category != '구로·영등포'
+		and d.di_category != '건대·구의·중랑') and di.b_di_num=d.di_num ) 
+		bb where aa.b_di_num=bb.di_num  and (B_STATUS='NO' or B_STATUS='YES' or B_STATUS='ING' or B_STATUS='WAIT')
+		order by b_date desc
+	</select>
+	<select id="selectBuyName" parameterType="Integer" resultType="detail">
+		select * from DASAM_DEAL_DETAIL where dd_num=#{dd_num}
+	</select>
+	
+	<select id="buyInfoList" parameterType="Integer" resultType="buy">
+	 SELECT * from DASAM_BUY where B_M_NUM=#{m_num} order by B_DATE desc  
+	</select>
+	
+	<select id="BuyDetail" parameterType="detail" resultType="detail">
+		select * from dasam_deal_detail where dd_num=#{detailnum} 
+	</select>
+	<insert id="BuyAllSuccess" parameterType="list">
+		insert into DASAM_BUY values(dasam_buy_seq.nextval,#{b_m_num},#{b_di_num},#{b_di_name},#{b_dd_num},#{b_amount},#{b_price},#{b_status},sysdate)
+	</insert>
+	
+	<select id="AllBuySelect" parameterType="mem" resultType="buy">
+  		SELECT B_DI_NUM, B_DI_NAME,B_PRICE,B_DATE,b_status from dasam_buy 
+  		INNER JOIN dasam_mem ON dasam_buy.B_M_NUM = dasam_mem.m_num where m_num=#{m_num} 
+  		and (B_STATUS='NO' or B_STATUS='YES' or B_STATUS='ING' or B_STATUS='WAIT')
+  		order by b_date desc
+  	</select>
+	
+	<select id="CancelBuySelect" parameterType="mem" resultType="buy">
+  		SELECT * from DASAM_BUY where B_M_NUM=#{m_num} 
+  		and (B_STATUS='HANDLING' or B_STATUS='REFUND' or B_STATUS='CANCEL' or B_STATUS='EXCHANGE') order by B_DATE desc
+  	</select>
+	
+	<select id="showcabuList" parameterType="Integer" resultType="cart">
+  		SELECT * from DASAM_CART where CART_DI_NUM=#{cart_num}
+  	</select>
+  	
+  	<select id="showInfoList" parameterType="Integer" resultType="info">
+  		SELECT * from dasam_deal_info where di_num = #{cart_num}
+  	</select>
+  <!-- =================================================== -->
+  
+  <select id="selectdetailName" parameterType="Integer" resultType="detail">
+		select * from DASAM_DEAL_DETAIL where DD_NUM=#{CART_DI_NUM}
+	</select>
+	
+  <!-- =================================================== -->
+  
+  <update id="minorAmount" parameterType="buyDetail">
+	UPDATE DASAM_DEAL_DETAIL SET DD_AMOUNT = DD_AMOUNT - #{bd_dd_amount} WHERE  DD_NUM = #{bd_dd_num}
+	</update>
+	
+	<select id="buyOne" parameterType="Integer" resultType="buy">
+	 	select * from dasam_buy where b_num = #{b_num}
+	</select>
+	<select id="buyInfoListTwo" parameterType="Integer" resultType="buy">
+	SELECT * from DASAM_BUY where B_M_NUM=#{m_num}  and B_STATUS='YES' order by B_DATE desc
+	</select>
+	<select id="infoOne"  parameterType="Integer" resultType="info">
+	SELECT * from dasam_deal_info where di_num = #{di_num}
+	</select>
+  
+  
+  </mapper>

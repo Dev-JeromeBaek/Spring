@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="logMapper">
+	<insert id="insertOne" parameterType="log">
+		insert into t_log values(t_log_seq.nextval, #{id}, #{pw})
+	</insert>
+	
+	<select id="selectOne" parameterType="log"
+							resultType="log">
+		select * from t_log where id=#{id} and pw=#{pw}
+	</select>
+</mapper>

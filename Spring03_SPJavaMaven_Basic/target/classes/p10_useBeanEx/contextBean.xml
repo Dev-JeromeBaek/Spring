@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="controller" class="p10_useBeanEx.PeopleController"/>
+	
+	<bean id="service" class="p10_useBeanEx.PeoService"/>
+	
+	<bean id="dbConn" class="p10_useBeanEx.JdbcConnector"/>
+	
+	<bean id="dao" class="p10_useBeanEx.peoDAO"/>
+	
+	<bean id="listcDB" class="java.util.ArrayList"/>
+	
+
+</beans>

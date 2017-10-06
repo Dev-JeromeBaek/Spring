@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;resources&apos;&#x0D;&#x0A;- Original project: &apos;YEOB_1st_Project&apos;&#x0D;&#x0A;- Destination element: &apos;resources&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     sb-admin-2.css&#x0D;&#x0A;     sb-admin-2.js" description="Copy files" element1="sb-admin-2.css" element2="sb-admin-2.js" files="2" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1489860881742" target="/aaa/src/main/webapp/resources" units="0" version="1.0"/>
+</session>

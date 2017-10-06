@@ -1,0 +1,10 @@
+package hwex.mvc.hotel.repository;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class HotelRepository {
+	
+	
+	
+}// (Repository) class END

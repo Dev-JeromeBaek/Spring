@@ -1,0 +1,176 @@
+[genuitec-file-id="wc1-143"],[genuitec-lp-path="/aaa/src/main/webapp/resources/css/yeob/admin-show-list.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+@CHARSET "UTF-8";
+
+.counterBox {
+	width: 1500px; height: 80px; margin-top: 40px; margin-bottom: 5px;
+}
+
+.tit1 {
+	font-family:"RixVideoGame 3D"; float:left; width:300px; height: 40px; margin-left:300px; font-size: x-large;
+}
+
+.tit2 {
+	font-family:"RixVideoGame 3D"; float:left; width:300px; height: 40px; margin-left:150px; font-size: x-large;
+}
+
+.tit3 {
+	font-family:"RixVideoGame 3D"; float:left; width:350px; height: 40px; margin-left:10px; font-size: xx-large;
+}
+
+.tit_sub {
+	
+}
+
+.showTopTop1 {
+	width: 1500px; height: auto;margin-bottom: 40px;
+}
+
+.showTopTop2 {
+	width: 1500px; height: auto; margin-top: 40px; margin-bottom: 40px;
+}
+
+.rankList {
+	width: 450px;
+    height: auto;
+    border: solid red 2px;
+    margin: 15px;
+    margin-left: 30px;
+    float: left;
+}
+
+.rankList p {
+	font-family: "배달의민족 주아"; font-size: large; color: blue;
+}
+
+.rankList_sub {
+    width: 430px;
+    height: 350px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0px;
+    margin-bottom: 15px;
+}
+.rankTable {
+    padding: 0px;
+    width: 470px;
+    margin-left: 10px;
+}
+
+.rankTable thead tr {
+	border-bottom: solid gray 3px; font-size: 15px;
+}
+
+.rankTable tbody tr {
+	border-bottom: solid gray 1px; font-size: medium;
+}
+
+.rankTable tbody td {
+	max-width: 30px;
+	height: 40px;
+}
+
+.rankTable tfoot a {
+	font-size: medium;
+}
+
+.leftList {
+	width: 600px; height: auto; border: solid red 2px; margin:15px; margin-left: 100px; float: left;
+}
+
+.leftList p {
+	font-family: "배달의민족 주아"; font-size: large; color: blue;
+}
+
+.leftList_sub {
+	width: 590px; height: 350px; overflow-y: auto; margin:5px; margin-bottom: 15px;
+}
+
+.listTable {
+	padding: 5px; width: 550px; margin-left: 20px;
+}
+
+.listTable thead tr {
+	border-bottom: solid gray 3px; font-size: 20px;
+}
+
+.listTable tbody tr {
+	border-bottom: solid gray 1px; font-size: medium;
+}
+
+.listTable tbody td {
+	max-width: 30px;
+}
+
+.listTable tfoot a {
+	font-size: medium;
+}
+
+.rightList {
+	width: 600px; height: auto; border: solid red 2px; margin:15px; margin-left: 80px; float: left;
+}
+
+.rightList p {
+	font-family: "배달의민족 주아"; font-size: large; color: green;
+}
+
+.rightList_sub {
+	width: 590px; height: 350px; overflow-y: auto; margin:5px; margin-bottom: 15px;
+}
+
+.showTopTop1_sub {
+	width: 1300px; height: auto; border: solid red 2px; margin:15px; margin-left: 100px; float: left;
+}
+.showTopTop1_sub p {
+	font-family: "배달의민족 주아"; font-size: large; color: blue;
+}
+.showTopTop1_sub_sub {
+	width: 1290px; height: 350px; overflow-y: auto; margin:5px;
+}
+		
+.waitApproveTable {
+	padding: 5px; width: 1250px; margin-left: 20px;
+}
+		
+.waitApproveTable thead tr {
+	border-bottom: solid gray 3px; font-size: 20px;
+}
+		
+.waitApproveTable tbody tr {
+	border-bottom: solid gray 1px; font-size: medium;
+}
+. counter {
+	margin-left:5px; margin-top: 0px ! important; font-size: large ! important;
+}
+		
+.moreDiv {
+	cursor: pointer;
+	font-family: "Rix토이그레이";
+	font-size: large;
+	text-shadow: red;
+}
+
+.moreNone {
+	cursor: default;
+	font-family: "Rix토이그레이";
+	font-size: large;
+	text-shadow: red;
+}
+
+.corpListTable {
+	padding: 5px; width: 1250px; margin-left: 20px;
+}
+		
+.corpListTable thead tr {
+	border-bottom: solid gray 3px; font-size: 20px;
+}
+		
+.corpListTable tbody tr {
+	border-bottom: solid gray 1px; font-size: medium;
+}
+
+
+
+

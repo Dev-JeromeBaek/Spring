@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="peopleMapper">
+  
+  	<select id="count" resultType="java.lang.Integer">
+  		select count(*) from t_peo
+  	</select>
+  
+  	<select id="selectList" 
+  				parameterType="spring.mvc.spring14.module.PageDTO" 
+  					resultType="apb">
+  		<![CDATA[
+  			select * from (select rownum rnum, tt.* from (select * from t_peo order by num desc) tt)
+  			where rnum >= #{startNum} and rnum <= #{endNum}
+  		]]>
+  	</select>
+  
+  	<select id="selectOne" parameterType="Integer" resultType="apb">
+  		select * from t_peo where num=#{num}
+  	</select>
+  </mapper>

@@ -1,0 +1,17 @@
+<br>
+				<div class="slideView">
+					<c:if test="${ slide != null }">
+						<jsp:include page="${ slide }"></jsp:include>
+					</c:if>
+				</div>
+				<div class="todaysView">
+					<c:if test="${ todays != null }">
+						<jsp:include page="${ todays }"></jsp:include>
+					</c:if>
+				</div>
+				<div class="othersView">
+					<c:if test="${ others != null }">
+						<jsp:include page="${ others }"></jsp:include>
+					</c:if>
+				</div>
+				<br>

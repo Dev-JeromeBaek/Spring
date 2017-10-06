@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="logMapper">
+  	
+<!--   	<select id="today" resultType="java.util.Date"> -->
+<!--   		select sysdate from dual -->
+<!--   	</select> -->
+  	
+  	<select id="visitHistory" parameterType="mapper" resultType="memlog">
+  		select * from dasam_mem_log where ml_m_num=#{inte1} and ml_date=#{str1}
+  	</select>
+  	
+  	<insert id="insertLog" parameterType="mapper">
+  		insert into dasam_mem_log values(dasam_mem_log_seq.nextval, #{inte1}, #{str1})
+  	</insert>
+  	
+  	<select id="countTodays" parameterType="java.lang.String" resultType="memlog">
+	  	select * from dasam_mem_log where ml_date=#{today}
+<!--   		select * from dasam_mem_log where ml_date like sysdate -->
+<!--   		select count(*) from dasam_mem_log where ml_date like sysdate -->
+  	</select>
+  	
+<!--   	<select id="showTodaysMemList" parameterType="java.util.Date" resultType="memlog"> -->
+<!--   		select * from dasam_mem_log where ml_date=#{today} order by ml_num desc -->
+<!--   	</select> -->
+  	
+  </mapper>
+  

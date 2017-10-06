@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="corpMapper">
+
+  <insert id="corpJoin" parameterType="corp">
+  	insert into dasam_corp values(dasam_corp_seq.nextval,#{c_bn},#{c_pw},#{c_name},#{c_ceo}
+  	,#{c_tel},#{c_phone},#{c_addr},#{c_grade},#{c_dealcount},#{c_sellingprice},sysdate)
+  </insert>
+  
+  <select id="corpLogin" parameterType="corp" resultType="corp">
+  	select * from dasam_corp where c_bn=#{c_bn} and c_pw=#{c_pw} 
+  </select>
+  
+  <select id="corpBnCheck" parameterType="corp" resultType="corp">
+  	select * from dasam_corp where c_bn=#{c_bn}
+  </select>
+  
+  <select id="selectOne" resultType="corp">
+  	select * from dasam_corp where c_num=#{c_num}
+  </select>
+  
+  <select id="selectCorpOne" parameterType="java.lang.Integer" resultType="corp">
+  	select * from dasam_corp where c_num=#{c_num}
+  </select>
+    
+<!--   <delete id="corpDel"> -->
+<!--   	delete dasam_corp -->
+<!--   </delete> -->
+  
+  <!-- 백팀장 목록 -->
+  <!-- 딜올린 기업의 회사명과 대표자명 뽑아오기 -->
+  <select id="upDealCorp" parameterType="java.lang.Integer" resultType="excorp">
+  	select * from dasam_corp where c_num=#{di_c_num}
+  </select>
+  
+  <select id="showCorpList" resultType="excorp">
+  	select * from dasam_corp order by c_num desc
+  </select>
+  
+  <select id="getCorpInfoOne" parameterType="java.lang.Integer" resultType="excorp">
+  	select * from dasam_corp where c_num=#{c_num}
+  </select>
+  
+  <delete id="deleteCorp" parameterType="java.lang.Integer">
+  	delete from dasam_corp where c_num=#{c_num}
+  </delete>
+  
+  <update id="modifyCorp" parameterType="mapper">
+  	update dasam_corp set c_ceo=#{str2}, c_pw=#{str3}, c_tel=#{str4}, c_phone=#{str5}, c_addr=#{str6} where c_num=#{inte1}
+  </update>
+  
+  <update id="modifyCorpGrade" parameterType="corp">
+  	update dasam_corp set c_grade=#{c_grade} where c_num=#{c_num}
+  </update>
+  
+  </mapper>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
